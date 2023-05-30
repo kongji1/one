@@ -32,6 +32,9 @@ proxy-groups:
   - name: 🔰 手选
     type: select
     proxies:
+      - 🇨🇳 💭 x1
+      - 🇨🇳 💪 x1
+      - 🇨🇳 🎦 x1 
       - ♻️ 自动
       - 🎯 直连
       - 🪜 GH
@@ -42,9 +45,6 @@ proxy-groups:
       - 🪜 AG
       - 🇨🇳 🎦 x0
       - 🇨🇳 🎦 x01
-      - 🇨🇳 💭 x1
-      - 🇨🇳 💪 x1
-      - 🇨🇳 🎦 x1
       - 🇺🇸 美国 x1 隧道A
       - 🇺🇸 美国 x1 隧道B
       - 🇺🇸 美国 x1 隧道C
@@ -62,6 +62,9 @@ proxy-groups:
       - 🪜 AV
       - 🪜 OR
       - 🪜 ORT
+      - 🇨🇳 💭 x1
+      - 🇨🇳 💪 x1
+      - 🇨🇳 🎦 x1 
   - name: 🌍 外媒
     type: select
     proxies:
