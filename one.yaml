@@ -11,23 +11,23 @@ ipv6: false
 
 
 proxies:
-  - {name: 🇺🇸 美国 x1 隧道C, server: c9d93ec.u1.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
-  - {name: 🇺🇸 美国 x1 隧道B, server: c9d93ec.u2.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
-  - {name: 🇺🇸 美国 x1 隧道A, server: c9d93ec.u3.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
-  - {name: 🇯🇵 日本 x1 隧道A, server: c9d93ec.j1.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
-  - {name: 🇯🇵 日本 x1 隧道B, server: c9d93ec.j2.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
-  - {name: 🇯🇵 日本 x1 隧道C, server: c9d93ec.j3.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
-  - {name: 🇺🇸 美国 x0 隧道D, server: time.is, port: 443, type: vmess, uuid: 897a7f73-0dfc-47f1-846f-1dcd891ec1f9, alterId: 0, cipher: auto, tls: true, servername: cn.gpte.top, network: ws, ws-opts: {path: /2bbe73, headers: {Host: cn.gpte.top}}}
+  - {name: 🇺🇸 C, server: c9d93ec.u1.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
+  - {name: 🇺🇸 B, server: c9d93ec.u2.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
+  - {name: 🇺🇸 A, server: c9d93ec.u3.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
+  - {name: 👹 A, server: c9d93ec.j1.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
+  - {name: 👹 B, server: c9d93ec.j2.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
+  - {name: 👹 C, server: c9d93ec.j3.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
   - {name: 🇨🇳 💭 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: e09bd0f2-5f71-4021-b7a1-2c4b48c9900e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
   - {name: 🇨🇳 💪 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: e09bd0f2-5f71-4021-b7a1-2c4b48c9900e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
   - {name: 🇨🇳 🎦 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: ac4befec-ff79-4aa0-8f5a-16ca7f0cd201, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
-  - {name: 🇨🇳 🎦 x0, server: time.is, port: 443, type: vmess, uuid: 897a7f73-0dfc-47f1-846f-1dcd891ec1f9, alterId: 0, cipher: auto, tls: true, servername: cn.gpte.top, network: ws, ws-opts: {path: /2bbe73, headers: {Host: cn.gpte.top}}}
-  - {name: 🇨🇳 🎦 x01, server: time.is, port: 8080, type: vmess, uuid: 897a7f73-0dfc-47f1-846f-1dcd891ec1f9, alterId: 0, cipher: auto, tls: false, servername: tp.nty.tv189.com, network: ws, ws-opts: {path: /2bbe73, headers: {Host: cn.gpte.top}}}
+  - {name: 🇺🇸 🎦 x01, server: time.is, port: 443, type: vmess, uuid: 897a7f73-0dfc-47f1-846f-1dcd891ec1f9, alterId: 0, cipher: auto, tls: true, servername: cn.gpte.top, network: ws, ws-opts: {path: /2bbe73, headers: {Host: cn.gpte.top}}}
+  - {name: 🇺🇸 🎦 x02, server: time.is, port: 8080, type: vmess, uuid: 897a7f73-0dfc-47f1-846f-1dcd891ec1f9, alterId: 0, cipher: auto, tls: false, servername: tp.nty.tv189.com, network: ws, ws-opts: {path: /2bbe73, headers: {Host: cn.gpte.top}}}
   - {name: 🪜 GH, type: http, server: 192.168.1.13, port: 1081}
   - {name: 🪜 GO, type: socks5, server: 192.168.1.13, port: 1082}
   - {name: 🪜 AV, type: http, server: 172.18.156.134, port: 8080}
-  - {name: 🪜 OR, type: socks5, server: 127.0.0.1, port: 9090}
-  - {name: 🪜 ORT, type: socks5, server: 192.168.1.12, port: 9090}
+  - {name: 🪜 AV9090, type: socks5, server: 127.0.0.1, port: 9090}
+  - {name: 🪜 AV9091, type: socks5, server: 192.168.1.12, port: 9090}
+  - {name: 🪜 12C, type: http, server: 192.168.1.12, port: 2119}
   - {name: 🪜 AG, type: socks5, server: 192.168.1.12, port: 1086}
 
 
@@ -36,6 +36,7 @@ proxy-groups:
     type: select
     proxies:
       - ♻️ 自动
+      - ♻️ 直连自动
       - 🇨🇳 💭 x1
       - 🇨🇳 💪 x1
       - 🇨🇳 🎦 x1 
@@ -43,31 +44,18 @@ proxy-groups:
       - 🪜 GH
       - 🪜 GO
       - 🪜 AV
-      - 🪜 OR
-      - 🪜 ORT
+      - 🪜 AV9090
+      - 🪜 AV9091
+      - 🪜 12C
       - 🪜 AG
-      - 🇨🇳 🎦 x0
-      - 🇨🇳 🎦 x01
-      - 🇺🇸 美国 x1 隧道A
-      - 🇺🇸 美国 x1 隧道B
-      - 🇺🇸 美国 x1 隧道C
-      - 🇺🇸 美国 x0 隧道D
-      - 🇯🇵 日本 x1 隧道A
-      - 🇯🇵 日本 x1 隧道B
-      - 🇯🇵 日本 x1 隧道C
-  - name: ♻️ 自动
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    proxies:
-      - 🪜 GH
-      - 🪜 GO
-      - 🪜 AV
-      - 🪜 OR
-      - 🪜 ORT
-      - 🇨🇳 💭 x1
-      - 🇨🇳 💪 x1
-      - 🇨🇳 🎦 x1 
+      - 🇺🇸 🎦 x01
+      - 🇺🇸 🎦 x02
+      - 🇺🇸 A
+      - 🇺🇸 B
+      - 🇺🇸 C
+      - 👹 A
+      - 👹 B
+      - 👹 C
   - name: 🌍 外媒
     type: select
     proxies:
@@ -77,10 +65,11 @@ proxy-groups:
       - 🪜 GH
       - 🪜 GO
       - 🪜 AV
-      - 🪜 OR
-      - 🪜 ORT
-      - 🇨🇳 🎦 x0
-      - 🇨🇳 🎦 x01
+      - 🪜 AV9090
+      - 🪜 AV9091
+      - 🪜 12C
+      - 🇺🇸 🎦 x01
+      - 🇺🇸 🎦 x02
       
   - name: 🌏 管媒
     type: select
@@ -89,11 +78,12 @@ proxy-groups:
       - 🪜 GH
       - 🪜 GO
       - 🪜 AV
-      - 🪜 OR
-      - 🪜 ORT
+      - 🪜 AV9090
+      - 🪜 AV9091
+      - 🪜 12C
       - 🔰 手选
-      - 🇨🇳 🎦 x0
-      - 🇨🇳 🎦 x01
+      - 🇺🇸 🎦 x01
+      - 🇺🇸 🎦 x02
       
   - name: Ⓜ️ 微软
     type: select
@@ -104,10 +94,11 @@ proxy-groups:
       - 🪜 GH
       - 🪜 GO
       - 🪜 AV
-      - 🪜 OR
-      - 🪜 ORT
-      - 🇨🇳 🎦 x0
-      - 🇨🇳 🎦 x01
+      - 🪜 AV9090
+      - 🪜 AV9091
+      - 🪜 12C
+      - 🇺🇸 🎦 x01
+      - 🇺🇸 🎦 x02
       
   - name: 📲 电报
     type: select
@@ -118,10 +109,11 @@ proxy-groups:
       - 🪜 GH
       - 🪜 GO
       - 🪜 AV
-      - 🪜 OR
-      - 🪜 ORT
-      - 🇨🇳 🎦 x0
-      - 🇨🇳 🎦 x01
+      - 🪜 AV9090
+      - 🪜 AV9091
+      - 🪜 12C
+      - 🇺🇸 🎦 x01
+      - 🇺🇸 🎦 x02
       
   - name: 🍎 苹果
     type: select
@@ -132,14 +124,16 @@ proxy-groups:
       - 🪜 GH
       - 🪜 GO
       - 🪜 AV
-      - 🪜 OR
-      - 🪜 ORT
-      - 🇨🇳 🎦 x0
-      - 🇨🇳 🎦 x01
+      - 🪜 AV9090
+      - 🪜 AV9091
+      - 🪜 12C
+      - 🇺🇸 🎦 x01
+      - 🇺🇸 🎦 x02
       
   - name: 🎯 直连
     type: select
     proxies:
+      - ♻️ 直连自动
       - 🇨🇳 💭 x1
       - 🇨🇳 💪 x1
       - 🇨🇳 🎦 x1
@@ -147,10 +141,11 @@ proxy-groups:
       - 🪜 GH
       - 🪜 GO
       - 🪜 AV
-      - 🪜 OR
-      - 🪜 ORT
-      - 🇨🇳 🎦 x0
-      - 🇨🇳 🎦 x01
+      - 🪜 AV9090
+      - 🪜 AV9091
+      - 🪜 12C
+      - 🇺🇸 🎦 x01
+      - 🇺🇸 🎦 x02
 
       
   - name: 🛑 拦截
@@ -167,10 +162,11 @@ proxy-groups:
       - 🪜 GH
       - 🪜 GO
       - 🪜 AV
-      - 🪜 OR
-      - 🪜 ORT
-      - 🇨🇳 🎦 x0
-      - 🇨🇳 🎦 x01
+      - 🪜 AV9090
+      - 🪜 AV9091
+      - 🪜 12C
+      - 🇺🇸 🎦 x01
+      - 🇺🇸 🎦 x02
       - 🇨🇳 💭 x1
       - 🇨🇳 💪 x1
       - 🇨🇳 🎦 x1
@@ -178,55 +174,81 @@ proxy-groups:
   - name: 🛑🛑🐟
     type: select
     proxies:
-      - 🇺🇸 美国 x1 隧道A
-      - 🇺🇸 美国 x1 隧道B
-      - 🇺🇸 美国 x1 隧道C
-      - 🇺🇸 美国 x0 隧道D
-      - 🇯🇵 日本 x1 隧道A
-      - 🇯🇵 日本 x1 隧道B
-      - 🇯🇵 日本 x1 隧道C
+      - 🇺🇸 A
+      - 🇺🇸 B
+      - 🇺🇸 C
+      - 👹 A
+      - 👹 B
+      - 👹 C
       - 🔰 手选
       - 🎯 直连
       - ♻️ 自动
       - 🪜 GH
       - 🪜 GO
       - 🪜 AV
-      - 🪜 OR
-      - 🪜 ORT
+      - 🪜 AV9090
+      - 🪜 AV9091
+      - 🪜 12C
       - 🪜 AG
-      - 🇨🇳 🎦 x0
-      - 🇨🇳 🎦 x01
+      - 🇺🇸 🎦 x01
+      - 🇺🇸 🎦 x02
+
+  - name: 🐟🛑🛑
+    type: select
+    proxies:
+      - 🐟自动
+      - 👹 A
+      - 👹 B
+      - 👹 C
+      - 🇺🇸 A
+      - 🇺🇸 B
+      - 🇺🇸 C
+
+      - 🔰 手选
+      - 🎯 直连
+      - ♻️ 自动
+      - 🪜 GH
+      - 🪜 GO
+      - 🪜 AV
+      - 🪜 AV9090
+      - 🪜 AV9091
+      - 🪜 12C
+      - 🪜 AG
+      - 🇺🇸 🎦 x01
+      - 🇺🇸 🎦 x02
+  - name: ♻️ 直连自动
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - DIRECT
+      - 🇨🇳 💭 x1
+      - 🇨🇳 💪 x1
+      - 🇨🇳 🎦 x1 
+  - name: ♻️ 自动
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 🪜 GH
+      - 🪜 GO
+      - 🪜 AV
+      - 🪜 AV9090
+      - 🪜 AV9091
+      - 🪜 12C
+      - 🇺🇸 🎦 x01
+      - 🇺🇸 🎦 x02
   - name: 🐟自动
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 🇯🇵 日本 x1 隧道A
-      - 🇯🇵 日本 x1 隧道B
-      - 🇯🇵 日本 x1 隧道C
-  - name: 🐟🛑🛑
-    type: select
-    proxies:
-      - 🐟自动
-      - 🇯🇵 日本 x1 隧道A
-      - 🇯🇵 日本 x1 隧道B
-      - 🇯🇵 日本 x1 隧道C
-      - 🇺🇸 美国 x1 隧道A
-      - 🇺🇸 美国 x1 隧道B
-      - 🇺🇸 美国 x1 隧道C
-      - 🇺🇸 美国 x0 隧道D
-      - 🔰 手选
-      - 🎯 直连
-      - ♻️ 自动
-      - 🪜 GH
-      - 🪜 GO
-      - 🪜 AV
-      - 🪜 OR
-      - 🪜 ORT
-      - 🪜 AG
-      - 🇨🇳 🎦 x0
-      - 🇨🇳 🎦 x01
-
+      - 👹 A
+      - 👹 B
+      - 👹 C
+      - 🪜 AV9090
+      - 🪜 AV9091
+      
 rules:
 
  - IP-CIDR,136.22.64.0/24,🎯 直连
@@ -358,9 +380,8 @@ rules:
  - DOMAIN-SUFFIX,keep.google.com,🛑🛑🐟
 
   #  openai服务
- - DOMAIN-SUFFIX,openai.com,🛑🛑🐟
+ - DOMAIN-SUFFIX,openai.com,🐟自动
 
- - DOMAIN-KEYWORD,google,🌍 外媒
 
  - DOMAIN-SUFFIX,local,🎯 直连
  - IP-CIDR,192.168.0.0/16,🎯 直连,no-resolve
