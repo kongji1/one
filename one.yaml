@@ -35,10 +35,10 @@ proxy-groups:
   - name: 🔰 手选
     type: select
     proxies:
+      - ♻️ 自动
       - 🇨🇳 💭 x1
       - 🇨🇳 💪 x1
       - 🇨🇳 🎦 x1 
-      - ♻️ 自动
       - 🎯 直连
       - 🪜 GH
       - 🪜 GO
@@ -140,6 +140,9 @@ proxy-groups:
   - name: 🎯 直连
     type: select
     proxies:
+      - 🇨🇳 💭 x1
+      - 🇨🇳 💪 x1
+      - 🇨🇳 🎦 x1
       - DIRECT
       - 🪜 GH
       - 🪜 GO
@@ -148,9 +151,7 @@ proxy-groups:
       - 🪜 ORT
       - 🇨🇳 🎦 x0
       - 🇨🇳 🎦 x01
-      - 🇨🇳 💭 x1
-      - 🇨🇳 💪 x1
-      - 🇨🇳 🎦 x1
+
       
   - name: 🛑 拦截
     type: select
@@ -195,37 +196,25 @@ proxy-groups:
       - 🪜 AG
       - 🇨🇳 🎦 x0
       - 🇨🇳 🎦 x01
-  - name: 🛑🐟🛑
-    type: select
+  - name: 🐟自动
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
     proxies:
-      - 🇺🇸 美国 x1 隧道A
-      - 🇺🇸 美国 x1 隧道B
-      - 🇺🇸 美国 x1 隧道C
-      - 🇺🇸 美国 x0 隧道D
       - 🇯🇵 日本 x1 隧道A
       - 🇯🇵 日本 x1 隧道B
       - 🇯🇵 日本 x1 隧道C
-      - 🔰 手选
-      - 🎯 直连
-      - ♻️ 自动
-      - 🪜 GH
-      - 🪜 GO
-      - 🪜 AV
-      - 🪜 OR
-      - 🪜 ORT
-      - 🪜 AG
-      - 🇨🇳 🎦 x0
-      - 🇨🇳 🎦 x01
   - name: 🐟🛑🛑
     type: select
     proxies:
+      - 🐟自动
+      - 🇯🇵 日本 x1 隧道A
+      - 🇯🇵 日本 x1 隧道B
+      - 🇯🇵 日本 x1 隧道C
       - 🇺🇸 美国 x1 隧道A
       - 🇺🇸 美国 x1 隧道B
       - 🇺🇸 美国 x1 隧道C
       - 🇺🇸 美国 x0 隧道D
-      - 🇯🇵 日本 x1 隧道A
-      - 🇯🇵 日本 x1 隧道B
-      - 🇯🇵 日本 x1 隧道C
       - 🔰 手选
       - 🎯 直连
       - ♻️ 自动
