@@ -331,7 +331,7 @@ rules:
 
  # dns.google/adguard-dns
  - DOMAIN-SUFFIX,dns.google,🐟自动
- - IP-CIDR,8.8.8.8/32,🐟自动🐟自动
+ - IP-CIDR,8.8.8.8/32,🐟自动
  - IP-CIDR,8.8.4.4/32,🐟自动
  - DOMAIN-SUFFIX,9f43c22f.d.adguard-dns.com,🐟自动
  - IP-CIDR,94.140.14.59/32,🐟自动
