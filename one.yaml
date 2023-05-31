@@ -1,10 +1,13 @@
-port: 7890
-socks-port: 7891
+#port: 7890
+mixed-port: 7890
+#socks-port: 7891
+redir-port: 7892
+tproxy-port: 7893
 allow-lan: true
 mode: Rule
-log-level: info
-external-controller: :9090
-
+log-level: debug
+external-controller: 127.0.0.1:9090
+ipv6: false
 
 
 proxies:
@@ -337,21 +340,6 @@ rules:
  - IP-CIDR,37.120.210.198/32,🪜 GH
  
 
-  # photos
- - DOMAIN-SUFFIX,photos.googleapis.com,🌍 外媒
- - DOMAIN-SUFFIX,growth-pa.googleapis.com,🌍 外媒
- - DOMAIN-KEYWORD,-mtalk.google.com,🛑 拦截
-
-
- - IP-CIDR,74.125.203.188/32,🛑🛑🐟
-
-  # 142.251.222.214 YouTube 在线视频平台的图片
- - DOMAIN-SUFFIX,i.ytimg.com,🌍 外媒
- - IP-CIDR,142.251.222.214/32,🌍 外媒
- - DOMAIN-SUFFIX,play.google.com,🌍 外媒
- - IP-CIDR,142.251.222.206/32,🌍 外媒
-
-
  # dns.google/adguard-dns
  - DOMAIN-SUFFIX,dns.google,🛑🐟🛑
  - IP-CIDR,8.8.8.8/32,🛑🐟🛑
@@ -365,178 +353,17 @@ rules:
  - DOMAIN-SUFFIX,m9009-us-lax-02-jqf6i8gd.mega-fine-obscurity.net,🛑🐟🛑
 
 
-
- - DOMAIN-SUFFIX,android.apis.google.com,🛑🐟🛑
- #photosdata-pa.googleapis.com持续连接自身
- - DOMAIN-SUFFIX,photosdata-pa.googleapis.com,🌍 外媒
- - DOMAIN-SUFFIX,subscriptionsmobile-pa.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,userlocation.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,play.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,geller-pa.googleapis.com,🛑🐟🛑
- - IP-CIDR,64.233.187.188/32,🛑🐟🛑
- - DOMAIN-SUFFIX,android.googleapis.com,🐟🛑🛑
- - IP-CIDR,142.250.115.188/32,🛑🐟🛑
- - DOMAIN-SUFFIX,signaler-pa.clients6.google.com,🛑🐟🛑
- - DOMAIN-SUFFIX,optimizationguide-pa.googleapis.com,🛑🐟🛑
-
-
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
- - DOMAIN-SUFFIX,content-autofill.googleapis.com,🛑🐟🛑
-
-
-
-
-
-  # 身份验证、访问控制、数据传输等功能
-
-
- # phosphor-pa.googleapis.com🌍
+ 
  - DOMAIN-SUFFIX,connectivitycheck.gstatic.com,🐟🛑🛑
  - DOMAIN-SUFFIX,phosphor-pa.googleapis.com,🐟🛑🛑
  - DOMAIN-SUFFIX,prod.brass.cloud.cupronickel.goog,🐟🛑🛑
- - DOMAIN-SUFFIX,dialercallinfolookup-pa.googleapis.com,🐟🛑🛑
  - DOMAIN-SUFFIX,scone-pa.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,oauth2.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,s.youtube.com,🐟🛑🛑
- - DOMAIN-SUFFIX,geller-pa.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,www.google.com,🐟🛑🛑
- - DOMAIN-SUFFIX,edge.microsoft.com,🐟🛑🛑
- - DOMAIN-SUFFIX,app-measurement.com,🐟🛑🛑
- - DOMAIN-SUFFIX,people-pa.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,footprints-pa.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,semanticlocation-pa.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,lh3.googleusercontent.com,🐟🛑🛑
-
- - DOMAIN-SUFFIX,ap2.googleusercontent.com,🐟🛑🛑
- - DOMAIN-SUFFIX,r5---sn-ogul7n7s.googlevideo.com,🐟🛑🛑
- - DOMAIN-SUFFIX,prod.brass.cloud.cupronickel.goog,🐟🛑🛑
+ - DOMAIN,www.google.com,🐟🛑🛑
+ - DOMAIN,www.googleapis.com,🐟🛑🛑
+ - DOMAIN,edge.microsoft.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,subscriptionsmobile-pa.googleapis.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,play.googleapis.com,🐟🛑🛑
  - DOMAIN-SUFFIX,android.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,prod.brass.cloud.cupronickel.goog,🐟🛑🛑
- - DOMAIN-SUFFIX,android.googleapis.com,🐟🛑🛑
- # windows
-
-
-
-
-
-
- - DOMAIN-SUFFIX,quake-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,notifications-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,firebaseinstallations.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,youtubei.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,voilatile-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,dialercallinfolookup-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,fcmconnection.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,digitalassetlinks.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,lhr25s34-in-f10.1e100.net,🛑🛑🐟
- - DOMAIN-SUFFIX,any-in-2678.1e100.net,🛑🛑🐟
- - DOMAIN-SUFFIX,lhr48s28-in-f10.1e100.net,🛑🛑🐟
- - DOMAIN-SUFFIX,lhr25s34-in-f10.1e100.net,🛑🛑🐟
-
- - DOMAIN-SUFFIX,graph.facebook.com,🛑🛑🐟
- - DOMAIN-SUFFIX,go.microsoft.com,🛑🛑🐟
- - DOMAIN-SUFFIX,dmd.metaservices.microsoft.com,🛑🛑🐟
- - DOMAIN-SUFFIX,www.gstatic.com,🛑🛑🐟
-
-
- - DOMAIN-SUFFIX,dialercallinfolookup-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,dialercallinfolookup-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,dialercallinfolookup-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,dialercallinfolookup-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,dialercallinfolookup-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,dialercallinfolookup-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,dialercallinfolookup-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,dialercallinfolookup-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,dialercallinfolookup-pa.googleapis.com,🛑🛑🐟
-
-
-
-
- 
- #- DOMAIN-SUFFIX,,🛑🛑🐟
-
- - DOMAIN-SUFFIX,dns.google.com,🛑🐟🛑
- - DOMAIN-SUFFIX,9f43c22f.d.adguard-dns.com,🛑🐟🛑
- - IP-CIDR,94.140.14.59/32,🛑🐟🛑
- - IP-CIDR,94.140.14.49/32,🛑🐟🛑
- - IP-CIDR,8.8.8.8/32,🛑🐟🛑
- - IP-CIDR,8.8.4.4/32,🛑🐟🛑
- - IP-CIDR,34.107.161.197/32,🛑🛑🐟
-
-  # Google Cloud Platform的域名，包括上海地区的IP
-
-
-
-
- # - IP-CIDR,.0/24,🛑🛑🐟
- - IP-CIDR,142.250.27.0/24,🛑🛑🐟
- - IP-CIDR,142.250.179.0/24,🛑🛑🐟
- - IP-CIDR,142.250.196.0/24,🛑🛑🐟
- - IP-CIDR,142.250.198.0/24,🛑🛑🐟
-# - IP-CIDR,142.250.199.0/24,🛑🛑🐟
- - IP-CIDR,142.250.207.0/24,🛑🛑🐟
- 
- - IP-CIDR,142.251.36.0/24,🛑🛑🐟
- - IP-CIDR,142.251.39.0/24,🛑🛑🐟
- #- IP-CIDR,142.251.42.0/24,🛑🛑🐟
- - IP-CIDR,142.251.42.195/32,🛑🛑🐟
- #appleTV- IP-CIDR,142.251.42.238/32,🛑🛑🐟
- - IP-CIDR,142.251.42.195/32,🛑🛑🐟
- #appleTV- IP-CIDR,142.251.43.14/32,🛑🛑🐟
- - IP-CIDR,142.251.170.0/24,🛑🛑🐟
- #- IP-CIDR,142.251.222.0/24,🛑🛑🐟
-
-
- - IP-CIDR,142.250.196.0/24,🛑🛑🐟
- # 216.58.220.138 nrt20s17-in-f10.1e100.net syd09s01-in-f138.1e100.net 非常重要
- - IP-CIDR,216.58.220.138/32,🛑🛑🐟
- #- IP-CIDR,172.217.161.67/32,🛑🛑🐟
-# - IP-CIDR,34.107.136.30/32,🛑🛑🐟
-# - IP-CIDR,142.250.179.138/32,🛑🛑🐟
- - IP-CIDR,142.251.36.10/32,🛑🛑🐟
- - IP-CIDR,172.217.26.0/24,🛑🛑🐟
-  # 172.217.161.67 nrt20s09-in-f3.1e100.net 非常重要
- - IP-CIDR,172.217.161.67/32,🛑🛑🐟
- - IP-CIDR,172.217.175.0/24,🛑🛑🐟
- 
-
- #- IP-CIDR,142.250.112.188/32,🎯 直连,no-resolve
-
-
- 
- - DOMAIN-SUFFIX,alt6-mtalk.google.com,🛑🛑🐟
-
- - DOMAIN-SUFFIX,subscriptionsmanagement-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,subscriptionsmobile-pa.googleapis.com,🛑🛑🐟
- - DOMAIN-SUFFIX,federatedml-pa.googleapis.com,🛑🛑🐟
-
-  # g-tun.com的na.b节点
- - DOMAIN-SUFFIX,na.b.g-tun.com,🛑🛑🐟
-
-  # Google的定位服务IP
- - DOMAIN-SUFFIX,userlocation.googleapis.com,🛑🛑🐟
-
-
-
-  # 订阅相关的域名关键字，比如 Google Play Store 的订阅
- - DOMAIN-KEYWORD,subscriptions,🛑🛑🐟
-
-  # Firebase 远程配置服务
- - DOMAIN-SUFFIX,firebaseremoteconfig.googleapis.com,🛑🛑🐟
 
   # Google Keep 笔记服务
  - DOMAIN-SUFFIX,keep.google.com,🛑🛑🐟
