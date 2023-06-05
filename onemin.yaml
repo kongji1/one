@@ -443,6 +443,9 @@ rules:
  - DOMAIN-SUFFIX,subscriptionsmobile-pa.googleapis.com,🐟🛑🛑
  - DOMAIN-SUFFIX,play.googleapis.com,🐟🛑🛑
  - DOMAIN-SUFFIX,android.googleapis.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,subscriptionsmanagement-pa.googleapis.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,android.apis.google.com,🐟🛑🛑
+
 
   # Google Keep 笔记服务
  - DOMAIN-SUFFIX,keep.google.com,🛑🛑🐟
