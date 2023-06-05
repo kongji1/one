@@ -16,7 +16,7 @@ ipv6: false
 #one路由https://linkip.adguard-dns.com/linkip/c73df354/SzUEkDlhUhKA3IlauVdKwZxwNileL5415dnpZT4zvC7
 
 dns:
-  enable: false # set true to enable dns (default is false)
+  enable: true # set true to enable dns (default is false)
   listen: 127.0.0.1:53
   nameserver:
      - 94.140.14.49
