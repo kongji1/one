@@ -314,6 +314,7 @@ proxy-groups:
       
 rules:
 
+ - DOMAIN,raw.githubusercontent.com,🐟自动
  - IP-CIDR,136.22.64.0/24,🎯 直连
  - IP-CIDR,136.22.65.0/24,🎯 直连
  - IP-CIDR,136.22.67.0/24,🎯 直连
@@ -422,6 +423,8 @@ rules:
  - DOMAIN-SUFFIX,9f43c22f.d.adguard-dns.com,🐟自动
  - IP-CIDR,94.140.14.59/32,🐟自动
  - IP-CIDR,94.140.14.49/32,🐟自动
+
+
 
 
 
