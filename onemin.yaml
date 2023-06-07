@@ -33,6 +33,7 @@ proxies:
   - {name: 👹 A, server: c9d93ec.j1.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
   - {name: 👹 B, server: c9d93ec.j2.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
   - {name: 👹 C, server: c9d93ec.j3.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
+  - {name: 🇨🇳 🎦 x1g, server: c9d93ec.f7.gladns.com, port: 3331, type: vmess, uuid: 57e0cb4d-eae5-48ec-8091-149dc2b309e0, alterId: 0, cipher: chacha20-poly1305, tls: false, udp: true, network: ws, ws-path: "/t", ws-headers: {Host: tls.apple.com, Edge: c9d93ec.fm.apple.com:145794 }, ws-opts: {path: /t, headers: {Host: tls.apple.com, Edge: c9d93ec.fm.apple.com:145794 }}, headers: {Host: tls.apple.com, Edge: c9d93ec.fm.apple.com:145794}, servername: n2.gladns.com, tls: true}
   - {name: 🇨🇳 💭 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: e09bd0f2-5f71-4021-b7a1-2c4b48c9900e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
   - {name: 🇨🇳 💪 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: e09bd0f2-5f71-4021-b7a1-2c4b48c9900e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
   - {name: 🇨🇳 🎦 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: ac4befec-ff79-4aa0-8f5a-16ca7f0cd201, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
@@ -76,6 +77,7 @@ proxy-groups:
       - 👹 A
       - 👹 B
       - 👹 C
+      - 🇨🇳 🎦 x1g
   - name: 🌍 外媒
     type: select
     proxies:
@@ -315,6 +317,7 @@ proxy-groups:
 rules:
 
  - DOMAIN,raw.githubusercontent.com,🐟自动
+ - DOMAIN,update.glados-config.com,🐟自动
  - IP-CIDR,136.22.64.0/24,🎯 直连
  - IP-CIDR,136.22.65.0/24,🎯 直连
  - IP-CIDR,136.22.67.0/24,🎯 直连
