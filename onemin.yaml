@@ -73,7 +73,7 @@ proxies:
       headers: { "Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
     headers: {"Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
     servername: n2.gladns.com
-    tls: true: 
+    tls: true
   - name: GLaDOS-JP-03
     type: ss
     server: c9d93ec.j3.gladns.com
