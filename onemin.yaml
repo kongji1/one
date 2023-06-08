@@ -107,7 +107,6 @@ proxy-groups:
       - 👹 A
       - 👹 B
       - 👹 C
-      - 🇨🇳 🎦 x1g
   - name: 🌍 外媒
     type: select
     proxies:
