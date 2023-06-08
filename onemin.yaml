@@ -57,7 +57,7 @@ proxies:
     plugin-opts:
       mode: tls
       host: c9d93ec.dl.nintendo.net:145794
-  - name: GLaDOS-JP-02
+  - name: GLaDOS-G1-02
     type: vmess
     server: c9d93ec.f8.gladns.com
     port: 3331
