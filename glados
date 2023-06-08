@@ -724,20 +724,40 @@ proxies:
       host: c9d93ec.dl.nintendo.net:145794
 
 
-  - {name: 🪜 GH🎯8080, type: http, server: 127.0.0.1, port: 8080}
-  - {name: 🇨🇳 💭 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: e09bd0f2-5f71-4021-b7a1-2c4b48c9900e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
-  - {name: 🇨🇳 💪 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: e09bd0f2-5f71-4021-b7a1-2c4b48c9900e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
-  - {name: 🇨🇳 🎦 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: ac4befec-ff79-4aa0-8f5a-16ca7f0cd201, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
-  - {name: 🇺🇸 🎦 x01, server: time.is, port: 443, type: vmess, uuid: 897a7f73-0dfc-47f1-846f-1dcd891ec1f9, alterId: 0, cipher: auto, tls: true, servername: cn.gpte.top, network: ws, ws-opts: {path: /2bbe73, headers: {Host: cn.gpte.top}}}
-  - {name: 🇺🇸 🎦 x02, server: time.is, port: 8080, type: vmess, uuid: 897a7f73-0dfc-47f1-846f-1dcd891ec1f9, alterId: 0, cipher: auto, tls: false, servername: tp.nty.tv189.com, network: ws, ws-opts: {path: /2bbe73, headers: {Host: cn.gpte.top}}}
-
 proxy-groups:
-  - name: 🐟🛑🛑
-    type: "select"
+  - name: Auto-Fast
+    type: "url-test"
+    url: "http://www.gstatic.cn/generate_204"
+    interval: 300
+    tolerance: 100
     proxies:
-        - GLaDOS-G1-02
-        - GLaDOS-G1-01
-        - GLaDOS-G1-03
+        - GLaDOS-H2-00
+        - GLaDOS-H2-01
+        - GLaDOS-H2-02
+  - name: Auto-Edge
+    type: "url-test"
+    url: "http://www.gstatic.cn/generate_204"
+    interval: 600
+    tolerance: 100
+    proxies:
+        - GLaDOS-H2-04
+        - GLaDOS-H2-05
+        - GLaDOS-F1-TW-01
+        - GLaDOS-F1-TW-02
+        - GLaDOS-F1-US-01
+        - GLaDOS-F1-US-02
+        - GLaDOS-F1-JP-01
+        - GLaDOS-F1-JP-02
+        - GLaDOS-F1-HK-01
+        - GLaDOS-F1-HK-02
+        - GLaDOS-F1-SG-01
+        - GLaDOS-F1-SG-02
+  - name: Auto-Failover
+    type: "url-test"
+    url: "http://www.gstatic.cn/generate_204"
+    interval: 1800
+    tolerance: 100
+    proxies:
         - GLaDOS-US-01
         - GLaDOS-US-02
         - GLaDOS-US-03
@@ -772,240 +792,938 @@ proxy-groups:
         - GLaDOS-F1-HK-02
         - GLaDOS-F1-SG-01
         - GLaDOS-F1-SG-02
-  - name: D直连
-    type: select
+  - name: Express
+    type: "fallback"
+    url: "http://www.gstatic.cn/generate_204"
+    interval: 600
+    tolerance: 50
     proxies:
-      - DIRECT
-      - 🇨🇳 💭 x1
-      - 🇨🇳 💪 x1
-      - 🇨🇳 🎦 x1
-      - 🇺🇸 🎦 x01
-      - 🇺🇸 🎦 x02
-      - 🪜 GH🎯8080
-
-
+        - Auto-Edge
+        - Auto-Fast
+        - Auto-Failover
+  - name: Auto
+    type: "fallback"
+    url: "http://www.gstatic.cn/generate_204"
+    interval: 600
+    proxies:
+        - Auto-Fast
+        - Auto-Edge
+        - Auto-Failover
+  - name: Proxy
+    type: "select"
+    proxies:
+        - "Auto"
+        - GLaDOS-US-01
+        - GLaDOS-US-02
+        - GLaDOS-US-03
+        - GLaDOS-US-04
+        - GLaDOS-US-05
+        - GLaDOS-US-06
+        - GLaDOS-JP-01
+        - GLaDOS-JP-02
+        - GLaDOS-JP-03
+        - GLaDOS-TW-01
+        - GLaDOS-TW-02
+        - GLaDOS-TW-03
+        - GLaDOS-TW-04
+        - GLaDOS-TW-05
+        - GLaDOS-TW-06
+        - GLaDOS-HK-01
+        - GLaDOS-HK-02
+        - GLaDOS-HK-03
+        - GLaDOS-SG-01
+        - GLaDOS-SG-02
+        - GLaDOS-SG-03
+        - GLaDOS-UK-01
+        - GLaDOS-UK-02
+        - GLaDOS-UK-03
+        - GLaDOS-D1-01
+        - GLaDOS-D1-02
+        - GLaDOS-D1-03
+        - GLaDOS-F1-TW-01
+        - GLaDOS-F1-TW-02
+        - GLaDOS-F1-US-01
+        - GLaDOS-F1-US-02
+        - GLaDOS-F1-JP-01
+        - GLaDOS-F1-JP-02
+        - GLaDOS-F1-HK-01
+        - GLaDOS-F1-HK-02
+        - GLaDOS-F1-SG-01
+        - GLaDOS-F1-SG-02
+  - name: Video
+    type: "select"
+    interval: 600
+    url: "http://www.gstatic.cn/generate_204"
+    proxies:
+        - Express
+        - GLaDOS-D1-01
+        - GLaDOS-D1-02
+        - GLaDOS-D1-03
+        - GLaDOS-US-01
+        - GLaDOS-US-02
+        - GLaDOS-US-03
+        - GLaDOS-US-04
+        - GLaDOS-US-05
+        - GLaDOS-US-06
+        - GLaDOS-JP-01
+        - GLaDOS-JP-02
+        - GLaDOS-JP-03
+        - GLaDOS-TW-01
+        - GLaDOS-TW-02
+        - GLaDOS-TW-03
+        - GLaDOS-TW-04
+        - GLaDOS-TW-05
+        - GLaDOS-TW-06
+        - GLaDOS-HK-01
+        - GLaDOS-HK-02
+        - GLaDOS-HK-03
+        - GLaDOS-SG-01
+        - GLaDOS-SG-02
+        - GLaDOS-SG-03
+        - GLaDOS-UK-01
+        - GLaDOS-UK-02
+        - GLaDOS-UK-03
+        - GLaDOS-F1-TW-01
+        - GLaDOS-F1-TW-02
+        - GLaDOS-F1-US-01
+        - GLaDOS-F1-US-02
+        - GLaDOS-F1-JP-01
+        - GLaDOS-F1-JP-02
+        - GLaDOS-F1-HK-01
+        - GLaDOS-F1-HK-02
+        - GLaDOS-F1-SG-01
+        - GLaDOS-F1-SG-02
+  - name: NETFLIX
+    type: "select"
+    url: "http://www.gstatic.cn/generate_204"
+    interval: 1200
+    proxies:
+        - Auto-Edge
+        - DIRECT
+  - name: OPENAI-NOT-STABLE
+    type: "select"
+    url: "http://www.gstatic.cn/generate_204"
+    interval: 1200
+    proxies:
+        - GLaDOS-G1-01
+        - GLaDOS-G1-02
+        - GLaDOS-G1-03
+        - GLaDOS-TW-01
+        - GLaDOS-TW-02
+        - GLaDOS-TW-03
+        - Proxy
+        - DIRECT
 rules:
+#user rules
 
- - DOMAIN,raw.githubusercontent.com,🐟🛑🛑
- - DOMAIN,update.glados-config.com,🐟🛑🛑
- - IP-CIDR,136.22.64.0/24,D直连
- - IP-CIDR,136.22.65.0/24,D直连
- - IP-CIDR,136.22.67.0/24,D直连
- - IP-CIDR,136.22.76.0/24,D直连
- - IP-CIDR,136.22.83.0/24,D直连
- - IP-CIDR,136.22.85.0/24,D直连
- - IP-CIDR,136.22.86.0/24,D直连
- - IP-CIDR,136.22.87.0/24,D直连
- - IP-CIDR,136.22.92.0/24,D直连
- - IP-CIDR,136.22.93.0/24,D直连
- - IP-CIDR,136.22.94.0/24,D直连
- - IP-CIDR,136.22.95.0/24,D直连
- - IP-CIDR,136.22.96.0/24,D直连
- - IP-CIDR,136.22.97.0/24,D直连
- - IP-CIDR,136.22.98.0/24,D直连
- - IP-CIDR,136.22.99.0/24,D直连
- - IP-CIDR,136.22.100.0/24,D直连
- - IP-CIDR,136.22.101.0/24,D直连
- - IP-CIDR,136.22.102.0/24,D直连
- - IP-CIDR,136.22.103.0/24,D直连
- - IP-CIDR,136.22.104.0/24,D直连
- - IP-CIDR,136.22.105.0/24,D直连
- - IP-CIDR,136.22.106.0/24,D直连
- - IP-CIDR,136.22.107.0/24,D直连
- - IP-CIDR,136.22.108.0/24,D直连
- - IP-CIDR,136.22.109.0/24,D直连
- - IP-CIDR,136.22.110.0/24,D直连
- - IP-CIDR,136.23.1.0/24,D直连
- - IP-CIDR,136.23.2.0/24,D直连
- - IP-CIDR,136.23.3.0/24,D直连
- - IP-CIDR,136.23.4.0/24,D直连
- - IP-CIDR,136.23.5.0/24,D直连
- - IP-CIDR,136.23.6.0/24,D直连
- - IP-CIDR,136.23.7.0/24,D直连
- - IP-CIDR,136.23.8.0/24,D直连
- - IP-CIDR,136.23.9.0/24,D直连
- - IP-CIDR,136.23.10.0/24,D直连
- - IP-CIDR,136.23.11.0/24,D直连
- - IP-CIDR,136.23.12.0/24,D直连
- - IP-CIDR,136.23.13.0/24,D直连
- - IP-CIDR,136.23.14.0/24,D直连
- - IP-CIDR,136.23.15.0/24,D直连
- - IP-CIDR,136.23.16.0/24,D直连
- - IP-CIDR,136.23.17.0/24,D直连
- - IP-CIDR,136.23.18.0/24,D直连
- - IP-CIDR,136.23.19.0/24,D直连
- - IP-CIDR,136.23.20.0/24,D直连
- - IP-CIDR,136.23.21.0/24,D直连
- - IP-CIDR,136.23.22.0/24,D直连
- - IP-CIDR,136.23.23.0/24,D直连
- - IP-CIDR,136.23.24.0/24,D直连
- - IP-CIDR,136.23.25.0/24,D直连
- - IP-CIDR,136.23.26.0/24,D直连
- - IP-CIDR,136.23.27.0/24,D直连
- - IP-CIDR,136.23.28.0/24,D直连
- - IP-CIDR,136.23.29.0/24,D直连
- - IP-CIDR,136.23.30.0/24,D直连
- - IP-CIDR,136.23.31.0/24,D直连
- - IP-CIDR,136.23.32.0/24,D直连
- - IP-CIDR,136.23.33.0/24,D直连
- - IP-CIDR,136.23.34.0/24,D直连
- - IP-CIDR,136.23.35.0/24,D直连
- - IP-CIDR,209.107.176.0/24,D直连
- - IP-CIDR,209.107.177.0/24,D直连
- - IP-CIDR,209.107.178.0/24,D直连
- - IP-CIDR,209.107.179.0/24,D直连
- - IP-CIDR,209.107.180.0/24,D直连
- - IP-CIDR,209.107.181.0/24,D直连
- - IP-CIDR,209.107.182.0/24,D直连
- - IP-CIDR,209.107.183.0/24,D直连
- - IP-CIDR,209.107.184.0/24,D直连
- - IP-CIDR,209.107.185.0/24,D直连
- - IP-CIDR,209.107.186.0/24,D直连
- - IP-CIDR,209.107.187.0/24,D直连
- - IP-CIDR,209.107.188.0/24,D直连
- - IP-CIDR,209.107.189.0/24,D直连
- - IP-CIDR,209.107.190.0/24,D直连
- - IP-CIDR,209.107.191.0/24,D直连
+# check first
+- DOMAIN-SUFFIX,qq.com,DIRECT
+- DOMAIN-SUFFIX,taobao.com,DIRECT
+- DOMAIN-SUFFIX,baidu.com,DIRECT
+- DOMAIN-SUFFIX,weibo.com,DIRECT
+- DOMAIN-SUFFIX,jd.com,DIRECT
+- DOMAIN-SUFFIX,tmall.com,DIRECT
+- DOMAIN-SUFFIX,360.cn,DIRECT
+- DOMAIN-SUFFIX,zhihu.com,DIRECT
+- DOMAIN-SUFFIX,com.cn,DIRECT
+- DOMAIN-SUFFIX,ol.epicgames.com,DIRECT
+
+# allowed safe trackers
+- DOMAIN,graph.instagram.com,DIRECT
+- DOMAIN,www.googleadservices.com,DIRECT
+- DOMAIN,control.kochava.com,DIRECT
+- DOMAIN,www.google-analytics.com,DIRECT
+- DOMAIN,ssl.google-analytics.com,DIRECT
+- DOMAIN,nexus.officeapps.live.com,DIRECT
+- DOMAIN,googleads.g.doubleclick.net,DIRECT
+- DOMAIN,e.crashlytics.com,DIRECT
+- DOMAIN,ib.adnxs.com,DIRECT
+- DOMAIN,safebrowsing.googleapis.com,DIRECT
+- DOMAIN-SUFFIX,googlesyndication.com,DIRECT
+- DOMAIN-SUFFIX,googletagmanager.com,DIRECT
+- DOMAIN-SUFFIX,googletagservices.com,DIRECT
+
+#specific geo services
+- DOMAIN-SUFFIX,paypal.com,GLaDOS-HK-01
+- DOMAIN-SUFFIX,stripe.com,GLaDOS-US-01
+
+#specific openai services
+- DOMAIN-SUFFIX,ai.com,OPENAI-NOT-STABLE
+- DOMAIN-SUFFIX,openai.com,OPENAI-NOT-STABLE
+- DOMAIN,openaiapi-site.azureedge.net,OPENAI-NOT-STABLE
+- DOMAIN-SUFFIX,bing.com,OPENAI-NOT-STABLE
+
+##tiktok
+- DOMAIN-SUFFIX,byteoversea.com,GLaDOS-US-01
+- DOMAIN-SUFFIX,muscdn.com,GLaDOS-US-01
+- DOMAIN-SUFFIX,musical.ly,GLaDOS-US-01
+- DOMAIN-SUFFIX,tik-tokapi.com,GLaDOS-US-01
+- DOMAIN-SUFFIX,tiktokcdn.com,GLaDOS-US-01
+- DOMAIN-SUFFIX,tiktok.com,GLaDOS-US-01
+- DOMAIN-SUFFIX,tiktokv.com,GLaDOS-US-01
+- DOMAIN-SUFFIX,full:p16-tiktokcdn-com.akamaized.net,GLaDOS-US-01
+
+#scholar
+- DOMAIN-KEYWORD,scholar,GLaDOS-TW-01
+- DOMAIN-SUFFIX,rxiv.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,acrjournals.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,cademic.eb.com,GLaDOS-US-01
+- DOMAIN-SUFFIX,caric.co.jp,GLaDOS-US-01
+- DOMAIN-SUFFIX,clweb.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,cm.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,cs.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,gu.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,iaa.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,imsciences.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,ms.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,natomy.tv,GLaDOS-US-01
+- DOMAIN-SUFFIX,nalytictech.com,GLaDOS-US-01
+- DOMAIN-SUFFIX,nnualreviews.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,ps.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,rabidopsis.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,rtstor.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,scelibrary.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,sha.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,sm.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,sme.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,sminternational.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,sn-online.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,spbjournals.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,spenpublishing.com,GLaDOS-US-01
+- DOMAIN-SUFFIX,stm.org,GLaDOS-US-01
+- DOMAIN-SUFFIX,siam.org,GLaDOS-US-01
+
+#dev
+- DOMAIN-SUFFIX,figma.com,Proxy
+- DOMAIN-SUFFIX,v2ex.com,Proxy
+- DOMAIN-KEYWORD,gitlab,Proxy
+- DOMAIN-KEYWORD,github,Proxy
+- DOMAIN-KEYWORD,npm,Proxy
+- DOMAIN-KEYWORD,stackoverflow.com,Proxy
+- DOMAIN-SUFFIX,techcrunch.com,Proxy
+- DOMAIN-SUFFIX,go-lang.com,Proxy
+- DOMAIN-SUFFIX,go-lang.net,Proxy
+- DOMAIN-SUFFIX,go-lang.org,Proxy
+- DOMAIN-SUFFIX,go.dev,Proxy
+- DOMAIN-SUFFIX,godoc.org,Proxy
+- DOMAIN-SUFFIX,golang.com,Proxy
+- DOMAIN-SUFFIX,golang.net,Proxy
+- DOMAIN-SUFFIX,golang.org,Proxy
+- DOMAIN-SUFFIX,trello.com,Proxy
+- DOMAIN-SUFFIX,techsmith.com,Proxy
+- DOMAIN-SUFFIX,thepiratebay.org,Proxy
+- DOMAIN-SUFFIX,pinterest.com,Proxy
+
+# > IQIYI
+- DOMAIN-KEYWORD,qiyi,DIRECT
+- DOMAIN-SUFFIX,qy.net,DIRECT
+- DOMAIN-SUFFIX,letv.com,DIRECT
+- DOMAIN-SUFFIX,71.am,DIRECT
+- DOMAIN-SUFFIX,71edge.com,DIRECT
+- DOMAIN-SUFFIX,iqiyi.com,DIRECT
+- DOMAIN-SUFFIX,iqiyipic.com,DIRECT
+- DOMAIN-SUFFIX,ppsimg.com,DIRECT
+- DOMAIN-SUFFIX,qiyi.com,DIRECT
+- DOMAIN-SUFFIX,qiyipic.com,DIRECT
+- DOMAIN-SUFFIX,qy.net,DIRECT
+
+# > NeteaseMusic
+- DOMAIN-SUFFIX,163yun.com,DIRECT
+- DOMAIN-SUFFIX,music.126.net,DIRECT
+- DOMAIN-SUFFIX,music.163.com,DIRECT
+
+# China CDN
+- DOMAIN-SUFFIX,tnkjmec.com,DIRECT
+- DOMAIN-SUFFIX,clngaa.com,DIRECT
+- DOMAIN-SUFFIX,ksyna.com,DIRECT
+- DOMAIN-SUFFIX,bscstorage.net,DIRECT
+- DOMAIN-SUFFIX,eccdnx.com,DIRECT
+- DOMAIN-SUFFIX,pinyuncloud.com,DIRECT
+- DOMAIN-SUFFIX,8686c.com,DIRECT
+- DOMAIN-SUFFIX,pphimalayanrt.com,DIRECT
+- DOMAIN-SUFFIX,qbox.me,DIRECT
+- DOMAIN-SUFFIX,qiniu.com,DIRECT
+- DOMAIN-SUFFIX,qiniudn.com,DIRECT
+- DOMAIN-SUFFIX,qiniup.com,DIRECT
+- DOMAIN-SUFFIX,qnsdk.com,DIRECT
+- DOMAIN-SUFFIX,qnssl.com,DIRECT
+- DOMAIN-SUFFIX,qiniucdn.com,DIRECT
+- DOMAIN-SUFFIX,qiniudns.com,DIRECT
+- DOMAIN-SUFFIX,sandai.net,DIRECT
+
+# > ByteDance
+- DOMAIN-KEYWORD,toutiao,DIRECT
+- DOMAIN-SUFFIX,bdxiguastatic.com,DIRECT
+- DOMAIN-SUFFIX,bdurl.net,DIRECT
+- DOMAIN-SUFFIX,douyinstatic.com,DIRECT
+- DOMAIN-SUFFIX,douyin.com,DIRECT
+- DOMAIN-SUFFIX,douyinpic.com,DIRECT
+- DOMAIN-SUFFIX,douyinvod.com,DIRECT
+- DOMAIN-SUFFIX,huoshan.com,DIRECT
+- DOMAIN-SUFFIX,huoshanstatic.com,DIRECT
+- DOMAIN-SUFFIX,huoshanzhibo.com,DIRECT
+- DOMAIN-SUFFIX,ixigua.com,DIRECT
+- DOMAIN-SUFFIX,ixiguavideo.com,DIRECT
+- DOMAIN-SUFFIX,ixgvideo.com,DIRECT
+- DOMAIN-SUFFIX,bdxiguaimg.com,DIRECT
+- DOMAIN-SUFFIX,pstatp.com,DIRECT
+- DOMAIN-SUFFIX,snssdk.com,DIRECT
+- DOMAIN-SUFFIX,zijiecdn.com,DIRECT
+- DOMAIN-SUFFIX,zijiecdn.net,DIRECT
+- DOMAIN-SUFFIX,zjbyte.cn,DIRECT
+- DOMAIN-SUFFIX,zjcdn.com,DIRECT
+- DOMAIN-SUFFIX,bytedance.com,DIRECT
+- DOMAIN-SUFFIX,bytedance.net,DIRECT
+- DOMAIN-SUFFIX,bytedns.net,DIRECT
+- DOMAIN-SUFFIX,byteimg.com,DIRECT
+- DOMAIN-SUFFIX,feiliao.com,DIRECT
+- DOMAIN-SUFFIX,gifshow.com,DIRECT
+- DOMAIN-SUFFIX,huoshan.com,DIRECT
+- DOMAIN-SUFFIX,iesdouyin.com,DIRECT
+- DOMAIN-SUFFIX,ixigua.com,DIRECT
+- DOMAIN-SUFFIX,kspkg.com,DIRECT
+- DOMAIN-SUFFIX,pstatp.com,DIRECT
+- DOMAIN-SUFFIX,snssdk.com,DIRECT
+- DOMAIN-SUFFIX,wukong.com,DIRECT
+- DOMAIN-SUFFIX,zijieimg.com,DIRECT
+- DOMAIN-SUFFIX,zjbyte.com,DIRECT
+- DOMAIN-SUFFIX,zjcdn.com,DIRECT
+
+# > Bilibili
+- DOMAIN-KEYWORD,bili,DIRECT
+- DOMAIN-SUFFIX,acg.tv,DIRECT
+- DOMAIN-SUFFIX,acgvideo.com,DIRECT
+- DOMAIN-SUFFIX,b23.tv,DIRECT
+- DOMAIN-SUFFIX,hdslb.com,DIRECT
+- DOMAIN-SUFFIX,im9.com,DIRECT
+
+# > Blizzard
+- DOMAIN-SUFFIX,blizzard.com,DIRECT
+- DOMAIN-SUFFIX,battle.net,DIRECT
+- DOMAIN,blzddist1-a.akamaihd.net,DIRECT
+
+# DIRECT
+- DOMAIN-SUFFIX,digicert.com,DIRECT
+- DOMAIN-SUFFIX,code.visualstudio.com,DIRECT
+
+# CCTV
+- DOMAIN-SUFFIX,cctv.com,DIRECT
+- DOMAIN-SUFFIX,cctvpic.com,DIRECT
+- DOMAIN-SUFFIX,livechina.com,DIRECT
+
+# DiDi
+- DOMAIN-SUFFIX,didialift.com,DIRECT
+- DOMAIN-SUFFIX,didiglobal.com,DIRECT
+- DOMAIN-SUFFIX,udache.com,DIRECT
+
+# Douyu 斗鱼
+- DOMAIN-SUFFIX,douyu.com,DIRECT
+- DOMAIN-SUFFIX,douyu.tv,DIRECT
+- DOMAIN-SUFFIX,douyuscdn.com,DIRECT
+- DOMAIN-SUFFIX,douyutv.com,DIRECT
+
+# Epic
+- DOMAIN-SUFFIX,epicgames.com,DIRECT
+- DOMAIN-SUFFIX,helpshift.com,DIRECT
+- DOMAIN-SUFFIX,paragon.com,DIRECT
+- DOMAIN-SUFFIX,unrealengine.com,DIRECT
+
+# HuaWei
+- DOMAIN-SUFFIX,dbankcdn.com,DIRECT
+- DOMAIN-SUFFIX,hc-cdn.com,DIRECT
+- DOMAIN-SUFFIX,hicloud.com,DIRECT
+- DOMAIN-SUFFIX,huawei.com,DIRECT
+- DOMAIN-SUFFIX,huaweicloud.com,DIRECT
+- DOMAIN-SUFFIX,huaweishop.net,DIRECT
+- DOMAIN-SUFFIX,hwccpc.com,DIRECT
+- DOMAIN-SUFFIX,vmall.com,DIRECT
+- DOMAIN-SUFFIX,vmallres.com,DIRECT
+
+# Iflytek
+- DOMAIN-SUFFIX,iflyink.com,DIRECT
+- DOMAIN-SUFFIX,iflyrec.com,DIRECT
+- DOMAIN-SUFFIX,iflytek.com,DIRECT
+
+- IP-CIDR,119.29.29.29/32,DIRECT
+- IP-CIDR,114.114.114.114/32,DIRECT
+- DOMAIN,dig.bdurl.net,DIRECT
+- DOMAIN,pagead2.googlesyndication.com,DIRECT
 
 
-#one.google.com
- - IP-CIDR,209.107.188.0/24,D直连
- - IP-CIDR,209.107.189.0/24,D直连
- - IP-CIDR,209.107.190.0/24,D直连
- - IP-CIDR,209.107.191.0/24,D直连
- - IP-CIDR,209.107.188.0/24,D直连
- - IP-CIDR,209.107.189.0/24,D直连
- - IP-CIDR,209.107.190.0/24,D直连
- - IP-CIDR,209.107.191.0/24,D直连
+# DIRECTEND
+
+# STEAM CN
+- DOMAIN,csgo.wmsj.cn,DIRECT
+- DOMAIN,dl.steam.clngaa.com,DIRECT
+- DOMAIN,dl.steam.ksyna.com,DIRECT
+- DOMAIN,dota2.wmsj.cn,DIRECT
+- DOMAIN,st.dl.bscstorage.net,DIRECT
+- DOMAIN,st.dl.eccdnx.com,DIRECT
+- DOMAIN,st.dl.pinyuncloud.com,DIRECT
+- DOMAIN,steampipe.steamcontent.tnkjmec.com,DIRECT
+- DOMAIN,steampowered.com.8686c.com,DIRECT
+- DOMAIN,steamstatic.com.8686c.com,DIRECT
+- DOMAIN,wmsjsteam.com,DIRECT
+- DOMAIN-SUFFIX,cm.steampowered.com,DIRECT
+- DOMAIN-SUFFIX,steamchina.com,DIRECT
+- DOMAIN-SUFFIX,steamcontent.com,DIRECT
+- DOMAIN-SUFFIX,steamusercontent.com,DIRECT
+
+# STEAM CDN
+- DOMAIN,steambroadcast.akamaized.net,Video
+- DOMAIN,steamcdn-a.akamaihd.net,Video
+- DOMAIN,steamcommunity-a.akamaihd.net,Video
+- DOMAIN,steampipe.akamaized.net,Video
+- DOMAIN,steamstore-a.akamaihd.net,Video
+- DOMAIN,steamusercontent-a.akamaihd.net,Video
+- DOMAIN,steamuserimages-a.akamaihd.net,Video
+- DOMAIN-SUFFIX,fanatical.com,Video
+- DOMAIN-SUFFIX,humblebundle.com,Video
+- DOMAIN-SUFFIX,playartifact.com,Video
+- DOMAIN-SUFFIX,steam-chat.com,Video
+- DOMAIN-SUFFIX,steamcommunity.com,Video
+- DOMAIN-SUFFIX,steamgames.com,Video
+- DOMAIN-SUFFIX,steampowered.com,Video
+- DOMAIN-SUFFIX,steamserver.net,Video
+- DOMAIN-SUFFIX,steamstat.us,Video
+- DOMAIN-SUFFIX,steamstatic.com,Video
+- DOMAIN-SUFFIX,underlords.com,Video
+- DOMAIN-SUFFIX,valvesoftware.com,Video
+
+# dns
+- IP-CIDR,1.1.1.1/32,Proxy
+- IP-CIDR,1.0.0.1/32,Proxy
+- IP-CIDR,8.8.8.8/32,Proxy
+- DOMAIN,dns.google,Proxy
+
+# debug
+- DOMAIN,ip.sb,Proxy
+- DOMAIN,myip.ipip.net,Video
+- DOMAIN,ifconfig.me,NETFLIX
+
+# hot fix
+- DOMAIN-KEYWORD,discord,Proxy
+- DOMAIN,services.googleapis.cn,Proxy
+- DOMAIN,googleapis.cn,Proxy
+- DOMAIN-SUFFIX,ping.pe,Proxy
+- DOMAIN-SUFFIX,f2pool.com,Proxy
+- DOMAIN-SUFFIX,static.wikia.nocookie.net,Proxy
+
+- DOMAIN-SUFFIX,discord.co,Proxy
+- DOMAIN-SUFFIX,discord.com,Proxy
+- DOMAIN-SUFFIX,discord.gg,Proxy
+- DOMAIN-SUFFIX,discord.media,Proxy
+- DOMAIN-SUFFIX,discordapp.com,Proxy
+- DOMAIN-SUFFIX,discordapp.net,Proxy
+
+# common site
+- DOMAIN,services.googleapis.cn,Proxy
+- DOMAIN,google.com,Proxy
+- DOMAIN-SUFFIX,google.cn,Proxy
+- DOMAIN-SUFFIX,googleapis.cn,Proxy
+- DOMAIN-KEYWORD,facebook,Proxy
+- DOMAIN-SUFFIX,fb.me,Proxy
+- DOMAIN-KEYWORD,gmail,Proxy
+- DOMAIN-KEYWORD,twitter,Proxy
+- DOMAIN-KEYWORD,instagram,Proxy
+- DOMAIN-SUFFIX,twimg.com,Proxy
+- DOMAIN-KEYWORD,blogspot,Proxy
+- DOMAIN-KEYWORD,whatsapp,Proxy
+- DOMAIN-KEYWORD,glados,Proxy
+- DOMAIN-KEYWORD,wikipedia,Proxy
+- DOMAIN-SUFFIX,google.com,Proxy
+- DOMAIN-SUFFIX,facebook.com,Proxy
+- DOMAIN-SUFFIX,yahoo.com,Proxy
+- DOMAIN-SUFFIX,amazon.com,Proxy
+- DOMAIN-SUFFIX,vk.com,Proxy
+- DOMAIN-SUFFIX,reddit.com,Proxy
+- DOMAIN-SUFFIX,live.com,Proxy
+- DOMAIN-SUFFIX,zoom.us,Proxy
+- DOMAIN-SUFFIX,wikipedia.org,Proxy
+- DOMAIN-SUFFIX,myshopify.com,Proxy
+- DOMAIN-SUFFIX,instagram.com,Proxy
+- DOMAIN-SUFFIX,okezone.com,Proxy
+- DOMAIN-SUFFIX,office.com,Proxy
+- DOMAIN-SUFFIX,ebay.com,Proxy
+- DOMAIN-SUFFIX,bongacams.com,Proxy
+- DOMAIN-SUFFIX,blogspot.com,Proxy
+- DOMAIN-SUFFIX,yahoo.co.jp,Proxy
+- DOMAIN-SUFFIX,babytree.com,Proxy
+- DOMAIN-SUFFIX,amazon.co.jp,Proxy
+- DOMAIN-SUFFIX,adobe.com,Proxy
+- DOMAIN-SUFFIX,livejasmin.com,Proxy
+- DOMAIN-SUFFIX,stackoverflow.com,Proxy
+- DOMAIN-SUFFIX,dropbox.com,Proxy
+- DOMAIN-SUFFIX,msn.com,Proxy
+- DOMAIN-SUFFIX,yandex.ru,Proxy
+- DOMAIN-SUFFIX,linkedin.com,Proxy
+- DOMAIN-SUFFIX,twitter.com,Proxy
+- DOMAIN-SUFFIX,imgur.com,Proxy
+- DOMAIN-SUFFIX,amazonaws.com,Proxy
+- DOMAIN-SUFFIX,imdb.com,Proxy
+- DOMAIN-SUFFIX,whatsapp.com,Proxy
+- DOMAIN-SUFFIX,google.co.jp,Proxy
+- DOMAIN-SUFFIX,wordpress.com,Proxy
+- DOMAIN-SUFFIX,nytimes.com,Proxy
+- DOMAIN-SUFFIX,spotify.com,Proxy
+
+# Proxy CDN
+- DOMAIN-SUFFIX,s3.amazonaws.com,Video
+- DOMAIN-KEYWORD,akam,Video
+
+# Video
+- DOMAIN-KEYWORD,youtube,Video
+- DOMAIN,lybmc.com,DIRECT
+- DOMAIN,dayi.com,Video
+- DOMAIN-SUFFIX,phncdn.com,Video
+- DOMAIN-SUFFIX,phprcdn.com,Video
+- DOMAIN-SUFFIX,youtu.be,Video
+- DOMAIN-SUFFIX,googlevideo.com,Video
+- DOMAIN-SUFFIX,ytimg.com,Video
+- DOMAIN-SUFFIX,googleusercontent.com,Video
+- DOMAIN-KEYWORD,twitch,Video
+
+#NETFLIX
+- DOMAIN-KEYWORD,netflix,NETFLIX
+- DOMAIN-SUFFIX,netflix.com,NETFLIX
+- DOMAIN-SUFFIX,netflix.net,NETFLIX
+- DOMAIN-SUFFIX,nflxext.com,NETFLIX
+- DOMAIN-SUFFIX,nflximg.com,NETFLIX
+- DOMAIN-SUFFIX,nflximg.net,NETFLIX
+- DOMAIN-SUFFIX,nflxso.net,NETFLIX
+- DOMAIN-KEYWORD,dualstack.apiproxy-,NETFLIX
+- DOMAIN-KEYWORD,dualstack.ichnaea-web-,NETFLIX
+- DOMAIN-SUFFIX,netflix.com.edgesuite.net,NETFLIX
+- DOMAIN-SUFFIX,us-west-2.amazonaws.com,NETFLIX
+- DOMAIN-KEYWORD,apiproxy-device-prod-nlb-,NETFLIX
+- DOMAIN-KEYWORD,ichnaea-web-,NETFLIX
+- DOMAIN,netflix.com.edgesuite.net,NETFLIX
+- DOMAIN-SUFFIX,netflix.com,NETFLIX
+- DOMAIN-SUFFIX,netflix.net,NETFLIX
+- DOMAIN-SUFFIX,nflxext.com,NETFLIX
+- DOMAIN-SUFFIX,nflximg.com,NETFLIX
+- DOMAIN-SUFFIX,nflximg.net,NETFLIX
+- DOMAIN-SUFFIX,nflxso.net,NETFLIX
+- DOMAIN-SUFFIX,nflxvideo.net,NETFLIX
+
+# > Fox+
+- DOMAIN-KEYWORD,foxplus,NETFLIX
+- DOMAIN-SUFFIX,config.fox.com,NETFLIX
+- DOMAIN-SUFFIX,emome.net,NETFLIX
+- DOMAIN-SUFFIX,fox.com,NETFLIX
+- DOMAIN-SUFFIX,foxdcg.com,NETFLIX
+- DOMAIN-SUFFIX,foxnow.com,NETFLIX
+- DOMAIN-SUFFIX,foxplus.com,NETFLIX
+- DOMAIN-SUFFIX,foxplay.com,NETFLIX
+- DOMAIN-SUFFIX,ipinfo.io,NETFLIX
+- DOMAIN-SUFFIX,mstage.io,NETFLIX
+- DOMAIN-SUFFIX,now.com,NETFLIX
+- DOMAIN-SUFFIX,theplatform.com,NETFLIX
+- DOMAIN-SUFFIX,urlload.net,NETFLIX
+
+# > HBO && HBO Go
+- DOMAIN-SUFFIX,hbo.com,NETFLIX
+- DOMAIN-SUFFIX,hboasia.com,NETFLIX
+- DOMAIN-SUFFIX,hbogo.com,NETFLIX
+- DOMAIN-SUFFIX,hbogoasia.hk,NETFLIX
+
+# > Hulu
+- DOMAIN-SUFFIX,hulu.com,NETFLIX
+- DOMAIN-SUFFIX,huluim.com,NETFLIX
+- DOMAIN-SUFFIX,hulustream.com,NETFLIX
+
+#Fast.com
+- DOMAIN-SUFFIX,fast.com,NETFLIX
+- DOMAIN-SUFFIX,oca.nflxvideo.net,NETFLIX
+- DOMAIN-SUFFIX,nflxvideo.net,NETFLIX
+
+- DOMAIN,cdn.registerdisney.go.com,NETFLIX
+- DOMAIN-SUFFIX,adobedtm.com,NETFLIX
+- DOMAIN-SUFFIX,bam.nr-data.net,NETFLIX
+- DOMAIN-SUFFIX,bamgrid.com,NETFLIX
+- DOMAIN-SUFFIX,braze.com,NETFLIX
+- DOMAIN-SUFFIX,cdn.optimizely.com,NETFLIX
+- DOMAIN-SUFFIX,cdn.registerdisney.go.com,NETFLIX
+- DOMAIN-SUFFIX,cws.conviva.com,NETFLIX
+- DOMAIN-SUFFIX,d9.flashtalking.com,NETFLIX
+- DOMAIN-SUFFIX,disney-plus.net,NETFLIX
+- DOMAIN-SUFFIX,disney-portal.my.onetrust.com,NETFLIX
+- DOMAIN-SUFFIX,disney.demdex.net,NETFLIX
+- DOMAIN-SUFFIX,disney.my.sentry.io,NETFLIX
+- DOMAIN-SUFFIX,disneyplus.bn5x.net,NETFLIX
+- DOMAIN-SUFFIX,disneyplus.com,NETFLIX
+- DOMAIN-SUFFIX,disneyplus.com.ssl.sc.omtrdc.net,NETFLIX
+- DOMAIN-SUFFIX,disneystreaming.com,NETFLIX
+- DOMAIN-SUFFIX,dssott.com,NETFLIX
+- DOMAIN-SUFFIX,execute-api.us-east-1.amazonaws.com,NETFLIX
+- DOMAIN-SUFFIX,js-agent.newrelic.com,NETFLIX
+
+# > ABC
+- DOMAIN-SUFFIX,edgedatg.com,Video
+- DOMAIN-SUFFIX,go.com,Video
+
+# > AbemaTV
+- DOMAIN,linear-abematv.akamaized.net,Video
+- DOMAIN-SUFFIX,abema.io,Video
+- DOMAIN-SUFFIX,abema.tv,Video
+- DOMAIN-SUFFIX,akamaized.net,Video
+- DOMAIN-SUFFIX,ameba.jp,Video
+- DOMAIN-SUFFIX,hayabusa.io,Video
+
+# > Amazon Prime Video
+- DOMAIN-SUFFIX,aiv-cdn.net,Video
+- DOMAIN-SUFFIX,amazonaws.com,Video
+- DOMAIN-SUFFIX,amazonvideo.com,Video
+- DOMAIN-SUFFIX,llnwd.net,Video
+
+# > Bahamut
+- DOMAIN-SUFFIX,bahamut.com.tw,NETFLIX
+- DOMAIN-SUFFIX,gamer.com.tw,NETFLIX
+- DOMAIN-SUFFIX,hinet.net,NETFLIX
+
+# > BBC
+- DOMAIN-KEYWORD,bbcfmt,Video
+- DOMAIN-KEYWORD,co.uk,Video
+- DOMAIN-KEYWORD,uk-live,Video
+- DOMAIN-SUFFIX,bbc.co,Video
+- DOMAIN-SUFFIX,bbc.co.uk,Video
+- DOMAIN-SUFFIX,bbc.com,Video
+- DOMAIN-SUFFIX,bbci.co,Video
+- DOMAIN-SUFFIX,bbci.co.uk,Video
+
+# > CHOCO TV
+- DOMAIN-SUFFIX,chocotv.com.tw,Video
+
+# > Epicgames
+- DOMAIN-KEYWORD,epicgames,Video
+- DOMAIN-SUFFIX,helpshift.com,Video
+
+# > Imkan
+- DOMAIN-SUFFIX,imkan.tv,Video
+
+# > JOOX
+- DOMAIN-SUFFIX,joox.com,Video
+
+# > MytvSUPER
+- DOMAIN-KEYWORD,nowtv100,Video
+- DOMAIN-KEYWORD,rthklive,Video
+- DOMAIN-SUFFIX,mytvsuper.com,Video
+- DOMAIN-SUFFIX,tvb.com,Video
+
+# > Pandora
+- DOMAIN-SUFFIX,pandora.com,Video
+
+# > Sky GO
+- DOMAIN-SUFFIX,sky.com,Video
+- DOMAIN-SUFFIX,skygo.co.nz,Video
+
+# > Spotify
+- DOMAIN-KEYWORD,spotify,Video
+- DOMAIN-SUFFIX,scdn.co,Video
+- DOMAIN-SUFFIX,spoti.fi,Video
+
+# > viuTV
+- DOMAIN-SUFFIX,viu.tv,Video
+
+# > Youtube
+- DOMAIN-KEYWORD,youtube,Video
+- DOMAIN-SUFFIX,googlevideo.com,Video
+- DOMAIN-SUFFIX,gvt2.com,Video
+- DOMAIN-SUFFIX,youtu.be,Video
+- DOMAIN-SUFFIX,youtu.be,Video
+- DOMAIN-SUFFIX,yt.be,Video
+- DOMAIN-SUFFIX,ytimg.com,Video
+- DOMAIN-KEYWORD,pornhub,Video
+- DOMAIN-KEYWORD,porn,Video
+- DOMAIN-KEYWORD,phncdn,Video
+- DOMAIN-SUFFIX,vimeo.com,Video
+- DOMAIN-SUFFIX,vimeocdn.com,Video
+
+# > Google
+- DOMAIN-KEYWORD,google,Proxy
+- DOMAIN-SUFFIX,abc.xyz,Proxy
+- DOMAIN-SUFFIX,android.com,Proxy
+- DOMAIN-SUFFIX,androidify.com,Proxy
+- DOMAIN-SUFFIX,dialogflow.com,Proxy
+- DOMAIN-SUFFIX,autodraw.com,Proxy
+- DOMAIN-SUFFIX,capitalg.com,Proxy
+- DOMAIN-SUFFIX,certificate-transparency.org,Proxy
+- DOMAIN-SUFFIX,chrome.com,Proxy
+- DOMAIN-SUFFIX,chromeexperiments.com,Proxy
+- DOMAIN-SUFFIX,chromestatus.com,Proxy
+- DOMAIN-SUFFIX,chromium.org,Proxy
+- DOMAIN-SUFFIX,creativelab5.com,Proxy
+- DOMAIN-SUFFIX,debug.com,Proxy
+- DOMAIN-SUFFIX,deepmind.com,Proxy
+- DOMAIN-SUFFIX,firebaseio.com,Proxy
+- DOMAIN-SUFFIX,getmdl.io,Proxy
+- DOMAIN-SUFFIX,ggpht.com,Proxy
+- DOMAIN-SUFFIX,gmail.com,Proxy
+- DOMAIN-SUFFIX,gmodules.com,Proxy
+- DOMAIN-SUFFIX,godoc.org,Proxy
+- DOMAIN-SUFFIX,golang.org,Proxy
+- DOMAIN-SUFFIX,gv.com,Proxy
+- DOMAIN-SUFFIX,gwtproject.org,Proxy
+- DOMAIN-SUFFIX,itasoftware.com,Proxy
+- DOMAIN-SUFFIX,madewithcode.com,Proxy
+- DOMAIN-SUFFIX,material.io,Proxy
+- DOMAIN-SUFFIX,polymer-project.org,Proxy
+- DOMAIN-SUFFIX,admin.recaptcha.net,Proxy
+- DOMAIN-SUFFIX,recaptcha.net,Proxy
+- DOMAIN-SUFFIX,shattered.io,Proxy
+- DOMAIN-SUFFIX,synergyse.com,Proxy
+- DOMAIN-SUFFIX,tensorflow.org,Proxy
+- DOMAIN-SUFFIX,tiltbrush.com,Proxy
+- DOMAIN-SUFFIX,waveprotocol.org,Proxy
+- DOMAIN-SUFFIX,waymo.com,Proxy
+- DOMAIN-SUFFIX,webmproject.org,Proxy
+- DOMAIN-SUFFIX,webrtc.org,Proxy
+- DOMAIN-SUFFIX,whatbrowser.org,Proxy
+- DOMAIN-SUFFIX,widevine.com,Proxy
+- DOMAIN-SUFFIX,x.company,Proxy
+- DOMAIN-SUFFIX,contest.com,Proxy
+- DOMAIN-SUFFIX,graph.org,Proxy
+- DOMAIN-SUFFIX,quiz.directory,Proxy
+- DOMAIN-SUFFIX,t.me,Proxy
+- DOMAIN-SUFFIX,tdesktop.com,Proxy
+- DOMAIN-SUFFIX,telega.one,Proxy
+- DOMAIN-SUFFIX,telegra.ph,Proxy
+- DOMAIN-SUFFIX,telegram.dog,Proxy
+- DOMAIN-SUFFIX,telegram.me,Proxy
+- DOMAIN-SUFFIX,telegram.org,Proxy
+- DOMAIN-SUFFIX,telegram.space,Proxy
+- DOMAIN-SUFFIX,telesco.pe,Proxy
+- DOMAIN-SUFFIX,tg.dev,Proxy
+- DOMAIN-SUFFIX,tx.me,Proxy
+- DOMAIN-SUFFIX,usercontent.dev,Proxy
+
+# apple
+- DOMAIN,hls.itunes.apple.com,DIRECT
+- DOMAIN,itunes.apple.com,DIRECT
+- DOMAIN-SUFFIX,apple.com,DIRECT
+- DOMAIN-SUFFIX,icloud.com,DIRECT
+- DOMAIN-SUFFIX,icloud-content.com,DIRECT
+- DOMAIN-SUFFIX,mzstatic.com,DIRECT
+- DOMAIN-SUFFIX,aaplimg.com,DIRECT
+- DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+
+# microsoft
+- DOMAIN-SUFFIX,live.com,DIRECT
+- DOMAIN-SUFFIX,live.net,DIRECT
+- DOMAIN-SUFFIX,office.com,DIRECT
+- DOMAIN-SUFFIX,office.net,DIRECT
+- DOMAIN-SUFFIX,sharepoint.com,DIRECT
+- DOMAIN-SUFFIX,office365.com,DIRECT
+- DOMAIN-SUFFIX,officeppe.net,DIRECT
+- DOMAIN-SUFFIX,skype.com,DIRECT
+- DOMAIN-SUFFIX,onedrive.com,DIRECT
+- DOMAIN-SUFFIX,msocsp.com,DIRECT
+- DOMAIN-SUFFIX,msauthimages.net,DIRECT
+- DOMAIN-SUFFIX,msauth.net,DIRECT
+- DOMAIN-SUFFIX,msn.com,DIRECT
+- DOMAIN-SUFFIX,onenote.com,DIRECT
+- DOMAIN-SUFFIX,onenote.net,DIRECT
+- DOMAIN-SUFFIX,1drv.com,DIRECT
+- DOMAIN-SUFFIX,microsoft.com,DIRECT
+- DOMAIN-SUFFIX,microsoftonline.com,DIRECT
+
+- DOMAIN-SUFFIX,miui.com,DIRECT
+- DOMAIN-SUFFIX,miwifi.com,DIRECT
+- DOMAIN-SUFFIX,mob.com,DIRECT
+- DOMAIN-SUFFIX,netease.com,DIRECT
+- DOMAIN-SUFFIX,office.com,DIRECT
+- DOMAIN-SUFFIX,office365.com,DIRECT
+- DOMAIN-KEYWORD,officecdn,DIRECT
+- DOMAIN-SUFFIX,oschina.net,DIRECT
+- DOMAIN-SUFFIX,ppsimg.com,DIRECT
+- DOMAIN-SUFFIX,pstatp.com,DIRECT
+- DOMAIN-SUFFIX,qcloud.com,DIRECT
+- DOMAIN-SUFFIX,qdaily.com,DIRECT
+- DOMAIN-SUFFIX,qdmm.com,DIRECT
+- DOMAIN-SUFFIX,qhimg.com,DIRECT
+- DOMAIN-SUFFIX,qhres.com,DIRECT
+- DOMAIN-SUFFIX,qidian.com,DIRECT
+- DOMAIN-SUFFIX,qihucdn.com,DIRECT
+- DOMAIN-SUFFIX,qiniu.com,DIRECT
+- DOMAIN-SUFFIX,qiniucdn.com,DIRECT
+- DOMAIN-SUFFIX,qiyipic.com,DIRECT
+- DOMAIN-SUFFIX,qq.com,DIRECT
+- DOMAIN-SUFFIX,qqurl.com,DIRECT
+- DOMAIN-SUFFIX,rarbg.to,DIRECT
+- DOMAIN-SUFFIX,ruguoapp.com,DIRECT
+- DOMAIN-SUFFIX,segmentfault.com,DIRECT
+- DOMAIN-SUFFIX,sinaapp.com,DIRECT
+- DOMAIN-SUFFIX,smzdm.com,DIRECT
+- DOMAIN-SUFFIX,sogou.com,DIRECT
+- DOMAIN-SUFFIX,sogoucdn.com,DIRECT
+- DOMAIN-SUFFIX,sohu.com,DIRECT
+- DOMAIN-SUFFIX,soku.com,DIRECT
+- DOMAIN-SUFFIX,speedtest.net,DIRECT
+- DOMAIN-SUFFIX,sspai.com,DIRECT
+- DOMAIN-SUFFIX,suning.com,DIRECT
+- DOMAIN-SUFFIX,taobao.com,DIRECT
+- DOMAIN-SUFFIX,tenpay.com,DIRECT
+- DOMAIN-SUFFIX,tmall.com,DIRECT
+- DOMAIN-SUFFIX,tudou.com,DIRECT
+- DOMAIN-SUFFIX,umetrip.com,DIRECT
+- DOMAIN-SUFFIX,upaiyun.com,DIRECT
+- DOMAIN-SUFFIX,upyun.com,DIRECT
+- DOMAIN-SUFFIX,veryzhun.com,DIRECT
+- DOMAIN-SUFFIX,weather.com,DIRECT
+- DOMAIN-SUFFIX,weibo.com,DIRECT
+- DOMAIN-SUFFIX,xiami.com,DIRECT
+- DOMAIN-SUFFIX,xiami.net,DIRECT
+- DOMAIN-SUFFIX,xiaomicp.com,DIRECT
+- DOMAIN-SUFFIX,ximalaya.com,DIRECT
+- DOMAIN-SUFFIX,xmcdn.com,DIRECT
+- DOMAIN-SUFFIX,xunlei.com,DIRECT
+- DOMAIN-SUFFIX,xycdn.com,DIRECT
+- DOMAIN-SUFFIX,yhd.com,DIRECT
+- DOMAIN-SUFFIX,yihaodianimg.com,DIRECT
+- DOMAIN-SUFFIX,yinxiang.com,DIRECT
+- DOMAIN-SUFFIX,ykimg.com,DIRECT
+- DOMAIN-SUFFIX,youdao.com,DIRECT
+- DOMAIN-SUFFIX,youku.com,DIRECT
+- DOMAIN-SUFFIX,zealer.com,DIRECT
+- DOMAIN-SUFFIX,zhihu.com,DIRECT
+- DOMAIN-SUFFIX,zhimg.com,DIRECT
+- DOMAIN-SUFFIX,zimuzu.tv,DIRECT
+
+# China
+- DOMAIN-SUFFIX,apcdns.net,DIRECT
+- DOMAIN-SUFFIX,cdntip.com,DIRECT
+- DOMAIN-SUFFIX,cdntips.com,DIRECT
+- DOMAIN-SUFFIX,foxmail.com,DIRECT
+- DOMAIN-SUFFIX,gtimg.com,DIRECT
+- DOMAIN-SUFFIX,idqqimg.com,DIRECT
+- DOMAIN-SUFFIX,imqq.com,DIRECT
+- DOMAIN-SUFFIX,myapp.com,DIRECT
+- DOMAIN-SUFFIX,myqcloud.com,DIRECT
+- DOMAIN-SUFFIX,qcloud.com,DIRECT
+- DOMAIN-SUFFIX,qcloudimg.com,DIRECT
+- DOMAIN-SUFFIX,qq.com,DIRECT
+- DOMAIN-SUFFIX,qqmail.com,DIRECT
+- DOMAIN-SUFFIX,qzone.com,DIRECT
+- DOMAIN-SUFFIX,servicewechat.com,DIRECT
+- DOMAIN-SUFFIX,smtcdns.com,DIRECT
+- DOMAIN-SUFFIX,smtcdns.net,DIRECT
+- DOMAIN-SUFFIX,tencent.com,DIRECT
+- DOMAIN-SUFFIX,tencent.com.hk,DIRECT
+- DOMAIN-SUFFIX,tencent-cloud.com,DIRECT
+- DOMAIN-SUFFIX,tencent-cloud.net,DIRECT
+- DOMAIN-SUFFIX,tencentcs.com,DIRECT
+- DOMAIN-SUFFIX,tencentmusic.com,DIRECT
+- DOMAIN-SUFFIX,tencentyun.com,DIRECT
+- DOMAIN-SUFFIX,tenpay.com,DIRECT
+- DOMAIN-SUFFIX,wechat.com,DIRECT
+- DOMAIN-SUFFIX,wegame.com,DIRECT
+- DOMAIN-SUFFIX,weiyun.com,DIRECT
+- DOMAIN-SUFFIX,25pp.com,DIRECT
+- DOMAIN-SUFFIX,56che.com,DIRECT
+- DOMAIN-SUFFIX,95095.com,DIRECT
+- DOMAIN-SUFFIX,aliapp.org,DIRECT
+- DOMAIN-SUFFIX,alibaba-inc.com,DIRECT
+- DOMAIN-SUFFIX,alibaba.com,DIRECT
+- DOMAIN-SUFFIX,alibabacapital.com,DIRECT
+- DOMAIN-SUFFIX,alibabacorp.com,DIRECT
+- DOMAIN-SUFFIX,alibabadoctor.com,DIRECT
+- DOMAIN-SUFFIX,alibabafuturehotel.com,DIRECT
+- DOMAIN-SUFFIX,alibabagroup.com,DIRECT
+- DOMAIN-SUFFIX,alibabaplanet.com,DIRECT
+- DOMAIN-SUFFIX,alibabaued.com,DIRECT
+- DOMAIN-SUFFIX,alibabausercontent.com,DIRECT
+- DOMAIN-SUFFIX,alifanyi.com,DIRECT
+- DOMAIN-SUFFIX,alihealth.hk,DIRECT
+- DOMAIN-SUFFIX,aliimg.com,DIRECT
+- DOMAIN-SUFFIX,alikmd.com,DIRECT
+- DOMAIN-SUFFIX,alimama.com,DIRECT
+- DOMAIN-SUFFIX,alimebot.com,DIRECT
+- DOMAIN-SUFFIX,alimei.com,DIRECT
+- DOMAIN-SUFFIX,alipay.com,DIRECT
+- DOMAIN-SUFFIX,alipaydns.com,DIRECT
+- DOMAIN-SUFFIX,alipayobjects.com,DIRECT
+- DOMAIN-SUFFIX,aliplus.com,DIRECT
+- DOMAIN-SUFFIX,aliresearch.com,DIRECT
+- DOMAIN-SUFFIX,alisoft.com,DIRECT
+- DOMAIN-SUFFIX,alisports.com,DIRECT
+- DOMAIN-SUFFIX,alitianji.com,DIRECT
+- DOMAIN-SUFFIX,aliunicorn.com,DIRECT
+- DOMAIN-SUFFIX,aliway.com,DIRECT
+- DOMAIN-SUFFIX,aliwork.com,DIRECT
+- DOMAIN-SUFFIX,alixiaomi.com,DIRECT
+- DOMAIN-SUFFIX,alizhaopin.com,DIRECT
+- DOMAIN-SUFFIX,asczwa.com,DIRECT
+- DOMAIN-SUFFIX,asczxcefsv.com,DIRECT
+- DOMAIN-SUFFIX,atatech.org,DIRECT
+- DOMAIN-SUFFIX,b2byao.com,DIRECT
+- DOMAIN-SUFFIX,bazai.com,DIRECT
+- DOMAIN-SUFFIX,bcvbw.com,DIRECT
+- DOMAIN-SUFFIX,cheng.xin,DIRECT
+- DOMAIN-SUFFIX,dayu.com,DIRECT
+- DOMAIN-SUFFIX,dongting.com,DIRECT
+- DOMAIN-SUFFIX,dratio.com,DIRECT
+- DOMAIN-SUFFIX,emas-poc.com,DIRECT
+- DOMAIN-SUFFIX,ialicdn.com,DIRECT
+- DOMAIN-SUFFIX,kanbox.com,DIRECT
+- DOMAIN-SUFFIX,lazada.com,DIRECT
+- DOMAIN-SUFFIX,liangxinyao.com,DIRECT
+- DOMAIN-SUFFIX,maitix.com,DIRECT
+- DOMAIN-SUFFIX,1688.com,DIRECT
+- DOMAIN-SUFFIX,etao.com,DIRECT
+- DOMAIN-SUFFIX,juhuasuan.com,DIRECT
+- DOMAIN-SUFFIX,lingshoujia.com,DIRECT
+- DOMAIN-SUFFIX,pailitao.com,DIRECT
+- DOMAIN-SUFFIX,taobao.com,DIRECT
+- DOMAIN-SUFFIX,taobao.org,DIRECT
+- DOMAIN-SUFFIX,taobaocdn.com,DIRECT
+- DOMAIN-SUFFIX,taobizhong.com,DIRECT
+- DOMAIN-SUFFIX,taopiaopiao.com,DIRECT
+- DOMAIN-SUFFIX,tbcache.com,DIRECT
+- DOMAIN-SUFFIX,tburl.in,DIRECT
+- DOMAIN-SUFFIX,tmall.com,DIRECT
+- DOMAIN-SUFFIX,tmall.ru,DIRECT
+- DOMAIN-SUFFIX,tmalltv.com,DIRECT
+- DOMAIN-SUFFIX,tmjl.ai,DIRECT
+- DOMAIN-SUFFIX,alitrip.com,DIRECT
+- DOMAIN-SUFFIX,feizhu.com,DIRECT
+- DOMAIN-SUFFIX,fliggy.com,DIRECT
+
+#ssh spam
+- DST-PORT,22,DIRECT
+- DST-PORT,222,DIRECT
+- DST-PORT,2222,DIRECT
+#EMAIL spam
+- DST-PORT,25,DIRECT
+- DST-PORT,26,DIRECT
+- DST-PORT,465,DIRECT
+- DST-PORT,587,DIRECT
+- DST-PORT,2525,DIRECT
+
+# BT
+- DST-PORT,6881,DIRECT
+- DST-PORT,6882,DIRECT
+- DST-PORT,6883,DIRECT
+- DST-PORT,6884,DIRECT
+- DST-PORT,6885,DIRECT
+- DST-PORT,6886,DIRECT
+- DST-PORT,6887,DIRECT
+- DST-PORT,6888,DIRECT
+- DST-PORT,6889,DIRECT
+
+# RULE VERSION
+- DOMAIN,2020020202.version.clash.im,REJECT
+
+- DOMAIN-SUFFIX,cn,DIRECT
+- GEOIP,CN,DIRECT
 
 
-#adguard
- - IP-CIDR,37.120.210.198/32,🪜 GH🎯8080
- - IP-CIDR,37.120.210.198/32,🪜 GH🎯8080
- - IP-CIDR,37.120.210.198/32,🪜 GH🎯8080
- - IP-CIDR,37.120.210.198/32,🪜 GH🎯8080
- - IP-CIDR,37.120.210.198/32,🪜 GH🎯8080
- - IP-CIDR,37.120.210.198/32,🪜 GH🎯8080
- 
+# LAN
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,17.0.0.0/8,DIRECT
+- IP-CIDR,100.64.0.0/10,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,192.168.0.0/16,DIRECT
 
- # dns.google/adguard-dns
- - DOMAIN,d.adguard-dns.com,🐟🛑🛑
- - DOMAIN,linkip.adguard-dns.com,D直连
- - DOMAIN-SUFFIX,dns.google,🐟🛑🛑
- - IP-CIDR,8.8.8.8/32,🐟🛑🛑
- - IP-CIDR,8.8.4.4/32,🐟🛑🛑
- - DOMAIN-SUFFIX,9f43c22f.d.adguard-dns.com,🐟🛑🛑
- - IP-CIDR,94.140.14.59/32,🐟🛑🛑
- - IP-CIDR,94.140.14.49/32,🐟🛑🛑
-
-
-
-
-
- - DOMAIN-SUFFIX,m9009-us-lax-02-jqf6i8gd.mega-fine-obscurity.net,🪜 GH🎯8080
-
-
- 
- - DOMAIN-SUFFIX,connectivitycheck.gstatic.com,🐟🛑🛑
- - DOMAIN-SUFFIX,phosphor-pa.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,prod.brass.cloud.cupronickel.goog,🐟🛑🛑
- - DOMAIN-SUFFIX,scone-pa.googleapis.com,🐟🛑🛑
- - DOMAIN,www.google.com,🐟🛑🛑
- - DOMAIN,www.googleapis.com,🐟🛑🛑
- - DOMAIN,edge.microsoft.com,🐟🛑🛑
- - DOMAIN-SUFFIX,subscriptionsmobile-pa.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,play.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,android.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,subscriptionsmanagement-pa.googleapis.com,🐟🛑🛑
- - DOMAIN-SUFFIX,android.apis.google.com,🐟🛑🛑
-
-
-  # Google Keep 笔记服务
- - DOMAIN-SUFFIX,keep.google.com,🛑🛑🐟
-
-  #  🐟🛑🛑服务
- - DOMAIN-KEYWORD,openai,🐟🛑🛑
- - DOMAIN-SUFFIX,ai.com,🐟🛑🛑
- - DOMAIN-SUFFIX,challenges.cloudflare.com,🐟🛑🛑
- - DOMAIN-SUFFIX,openai.com,🐟🛑🛑
- - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🐟🛑🛑
- - DOMAIN-SUFFIX,stripe.com,🐟🛑🛑
-
-
-# Reserved subnets
- - IP-CIDR,0.0.0.0/8,D直连
- - IP-CIDR,10.0.0.0/8,D直连
- - IP-CIDR,100.64.0.0/10,D直连
- - IP-CIDR,172.16.0.0/12,D直连
- - IP-CIDR,192.0.0.0/24,D直连
- - IP-CIDR,192.168.0.0/16,D直连
- - IP-CIDR,224.0.0.0/4,D直连
- - IP-CIDR,240.0.0.0/4,D直连
- - IP-CIDR,255.255.255.255/32,D直连
-
-# T-Mobile wi-fi calling (#233)
- - IP-CIDR,208.54.0.0/16,🐟🛑🛑
-
-# AT&T wi-fi calling
- - IP-CIDR,129.192.166.0/24,🐟🛑🛑
-
-# UK EE wi-fi calling (#582)
- - IP-CIDR,109.249.0.0/16,🐟🛑🛑
-
-# Sprint wi-fi calling (#939)
- - IP-CIDR,68.31.26.0/24,🐟🛑🛑
-
-# Verizon wi-fi calling (#1321)
- - IP-CIDR,141.207.0.0/16,🐟🛑🛑
-
-# Orange PL wi-fi calling (#1796)
- - IP-CIDR,217.116.96.0/20,🐟🛑🛑
-
-# IranCell Wi-Fi calling
- - IP-CIDR,92.42.49.0/24,🐟🛑🛑
-
-# Jio Wi-Fi calling
- - IP-CIDR,49.44.59.0/24,🐟🛑🛑
- - IP-CIDR,49.45.63.0/24,🐟🛑🛑
-
-# Mobile Communication Company of Iran Wi-Fi calling
- - IP-CIDR,5.106.2.0/24,🐟🛑🛑
-
-# Aofei Data International Wi-Fi calling
- - IP-CIDR,5.182.63.0/24,🐟🛑🛑
- - IP-CIDR,185.232.56.0/24,🐟🛑🛑
- - IP-CIDR,185.232.57.0/24,🐟🛑🛑
-
-# Bharti Airtel Limited Wi-Fi calling
- - IP-CIDR,106.200.64.0/24,🐟🛑🛑
- - IP-CIDR,106.200.65.0/24,🐟🛑🛑
- - IP-CIDR,223.180.224.0/24,🐟🛑🛑
- - IP-CIDR,117.96.89.0/24,🐟🛑🛑
-
-# Velcom Wi-Fi calling
- - IP-CIDR,128.140.255.0/24,🐟🛑🛑
-
-# MTS Wi-Fi calling
- - IP-CIDR,213.87.143.0/24,🐟🛑🛑
-
-# T-mobile Netherlands Wi-Fi calling
- - IP-CIDR,84.241.238.0/24,🐟🛑🛑
-
-# MTC-KSA (Mobile Telecommunications Co Saudi Arabia) Wi-Fi calling
- - IP-CIDR,79.170.52.0/24,🐟🛑🛑
- - IP-CIDR,79.170.53.0/24,🐟🛑🛑
- - IP-CIDR,185.5.152.0/24,🐟🛑🛑
-
-# China Mobile communications corporation Wi-Fi calling
- - IP-CIDR,120.236.180.0/24,🐟🛑🛑
- - IP-CIDR,183.236.59.0/24,🐟🛑🛑
-
-# DiGi Telecommunications Wi-Fi calling
- - IP-CIDR,115.164.123.0/24,🐟🛑🛑
- - IP-CIDR,115.164.251.0/24,🐟🛑🛑
-
-# Turkcell Wi-Fi calling
- - IP-CIDR,188.59.223.0/24,🐟🛑🛑
-
-
- - MATCH,D直连
+# Final
+- MATCH,Proxy
