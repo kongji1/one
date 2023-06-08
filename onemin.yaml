@@ -88,7 +88,34 @@ proxies:
 
 
 proxy-groups:
-  - name: 🔰 手选
+  - name: 🐟🛑🛑
+    type: select
+    proxies:
+      - 🐟自动
+      - 👹 A
+      - 👹 B
+      - 👹 C
+      - 🇺🇸 A
+      - 🇺🇸 B
+      - 🇺🇸 C
+      - GLaDOS-JP-01
+      - GLaDOS-JP-02
+      - GLaDOS-JP-03
+      - 🔰 手选
+      - 🎯 直连
+      - ♻️ 自动
+      - 🪜 GH
+      - 🪜 GO
+      - 🪜 AV
+      - 🪜 AV🎯9090
+      - 🪜 AV🎯8080
+      - 🪜 AV🎯7890
+      - 🪜 AV129090
+      - 🪜 12C
+      - 🪜 AG
+      - 🇺🇸 🎦 x01
+      - 🇺🇸 🎦 x02
+- name: 🔰 手选
     type: select
     proxies:
       - ♻️ 自动
@@ -267,33 +294,7 @@ proxy-groups:
       - 🇺🇸 🎦 x01
       - 🇺🇸 🎦 x02
 
-  - name: 🐟🛑🛑
-    type: select
-    proxies:
-      - 🐟自动
-      - 👹 A
-      - 👹 B
-      - 👹 C
-      - 🇺🇸 A
-      - 🇺🇸 B
-      - 🇺🇸 C
-      - GLaDOS-JP-01
-      - GLaDOS-JP-02
-      - GLaDOS-JP-03
-      - 🔰 手选
-      - 🎯 直连
-      - ♻️ 自动
-      - 🪜 GH
-      - 🪜 GO
-      - 🪜 AV
-      - 🪜 AV🎯9090
-      - 🪜 AV🎯8080
-      - 🪜 AV🎯7890
-      - 🪜 AV129090
-      - 🪜 12C
-      - 🪜 AG
-      - 🇺🇸 🎦 x01
-      - 🇺🇸 🎦 x02
+
   - name: ♻️ 直动
     type: load-balance
     strategy: consistent-hashing
