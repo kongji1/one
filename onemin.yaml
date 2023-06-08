@@ -58,15 +58,22 @@ proxies:
       mode: tls
       host: c9d93ec.dl.nintendo.net:145794
   - name: GLaDOS-JP-02
-    type: ss
-    server: c9d93ec.j2.gladns.com
-    port: 2377
-    cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
-    plugin: obfs
-    plugin-opts:
-      mode: tls
-      host: c9d93ec.dl.nintendo.net:145794
+    type: vmess
+    server: c9d93ec.f8.gladns.com
+    port: 3331
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: true
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
+    headers: {"Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
+    servername: n2.gladns.com
+    tls: true: 
   - name: GLaDOS-JP-03
     type: ss
     server: c9d93ec.j3.gladns.com
