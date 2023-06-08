@@ -1,0 +1,994 @@
+# Clash Config File for ClashforWindows/0.20.24-297228-11-352
+#port: 7890
+mixed-port: 7890
+#socks-port: 7891
+redir-port: 7892
+tproxy-port: 7893
+allow-lan: true
+mode: Rule
+log-level: debug
+external-controller: 127.0.0.1:9090
+ipv6: false
+
+#路由https://linkip.adguard-dns.com/linkip/9f43c22f/6vi3ymlMNQhpDrYW5CbaYccNf5aqqynpXnstbBVAgtz
+#red路由https://linkip.adguard-dns.com/linkip/3134b9a3/w5Ih04NaoRLWifXzlh7P6ONdybvpnLsSLWHCZFtoPM
+#mash路由https://linkip.adguard-dns.com/linkip/c514b774/x8dkn2wJ5Lnr7ix2JMNKsQhx9bi0TLT7WkRUojWH7Sy
+#one路由https://linkip.adguard-dns.com/linkip/c73df354/SzUEkDlhUhKA3IlauVdKwZxwNileL5415dnpZT4zvC7
+
+dns:
+  enable: false # set true to enable dns (default is false)
+  listen: 127.0.0.1:53
+  nameserver:
+     - 94.140.14.49
+     - 94.140.14.59
+  fallback: # concurrent request with nameserver, fallback used when GEOIP country isn't CN
+     - https://9f43c22f.d.adguard-dns.com/dns-query #9f43c22f@blue
+     - tls://9f43c22f.d.adguard-dns.com
+#     - quic://9f43c22f.d.adguard-dns.com
+
+
+proxies:
+  - name: GLaDOS-H2-00
+    type: trojan
+    server: c9d93ec.ha.gladns.com
+    port: 3306
+    sni: n2.gladns.com
+    password: "a50016fad77839e4"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/gateway/connect"
+      headers: { "Host":"a50016fad77839e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
+  - name: GLaDOS-H2-01
+    type: trojan
+    server: c9d93ec.hb.gladns.com
+    port: 3306
+    sni: n2.gladns.com
+    password: "a50016fad77839e4"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/gateway/connect"
+      headers: { "Host":"a50016fad77839e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
+  - name: GLaDOS-H2-02
+    type: trojan
+    server: c9d93ec.hc.gladns.com
+    port: 3306
+    sni: n2.gladns.com
+    password: "a50016fad77839e4"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/gateway/connect"
+      headers: { "Host":"a50016fad77839e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
+  - name: GLaDOS-H2-03
+    type: trojan
+    server: c9d93ec.hd.gladns.com
+    port: 3306
+    sni: n2.gladns.com
+    password: "a50016fad77839e4"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/gateway/connect"
+      headers: { "Host":"a50016fad77839e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
+  - name: GLaDOS-H2-04
+    type: trojan
+    server: c9d93ec.he.gladns.com
+    port: 3306
+    sni: n2.gladns.com
+    password: "a50016fad77839e4"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/gateway/connect"
+      headers: { "Host":"a50016fad77839e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
+  - name: GLaDOS-H2-05
+    type: trojan
+    server: c9d93ec.hf.gladns.com
+    port: 3306
+    sni: n2.gladns.com
+    password: "a50016fad77839e4"
+    udp: true
+    network: ws
+    ws-opts:
+      path: "/gateway/connect"
+      headers: { "Host":"a50016fad77839e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
+  - name: GLaDOS-US-01
+    type: ss
+    server: c9d93ec.u1.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-US-02
+    type: ss
+    server: c9d93ec.u2.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-US-03
+    type: ss
+    server: c9d93ec.u3.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-US-04
+    type: ss
+    server: c9d93ec.u7.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-US-05
+    type: ss
+    server: c9d93ec.u8.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-US-06
+    type: ss
+    server: c9d93ec.u9.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-JP-01
+    type: ss
+    server: c9d93ec.j1.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-JP-02
+    type: ss
+    server: c9d93ec.j2.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-JP-03
+    type: ss
+    server: c9d93ec.j3.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-TW-01
+    type: ss
+    server: c9d93ec.t1.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-TW-02
+    type: ss
+    server: c9d93ec.t2.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-TW-03
+    type: ss
+    server: c9d93ec.t3.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-TW-04
+    type: ss
+    server: c9d93ec.t7.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-TW-05
+    type: ss
+    server: c9d93ec.t8.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-TW-06
+    type: ss
+    server: c9d93ec.t9.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-HK-01
+    type: ss
+    server: c9d93ec.h1.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-HK-02
+    type: ss
+    server: c9d93ec.h2.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-HK-03
+    type: ss
+    server: c9d93ec.h3.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-SG-01
+    type: ss
+    server: c9d93ec.s1.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-SG-02
+    type: ss
+    server: c9d93ec.s2.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-SG-03
+    type: ss
+    server: c9d93ec.s3.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-UK-01
+    type: ss
+    server: c9d93ec.e1.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-UK-02
+    type: ss
+    server: c9d93ec.e2.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-UK-03
+    type: ss
+    server: c9d93ec.e3.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-B1-01
+    type: ss
+    server: c9d93ec.b1.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-B1-02
+    type: ss
+    server: c9d93ec.b2.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-B1-03
+    type: ss
+    server: c9d93ec.b3.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-B1-04
+    type: ss
+    server: c9d93ec.b4.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-B1-05
+    type: ss
+    server: c9d93ec.b5.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-B1-06
+    type: ss
+    server: c9d93ec.b6.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-B1-07
+    type: ss
+    server: c9d93ec.b7.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-B1-08
+    type: ss
+    server: c9d93ec.b8.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-B1-09
+    type: ss
+    server: c9d93ec.b9.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-D1-01
+    type: ss
+    server: c9d93ec.da.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-D1-02
+    type: ss
+    server: c9d93ec.db.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-D1-03
+    type: ss
+    server: c9d93ec.dc.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-F1-TW-01
+    type: vmess
+    servername: tw.moss.network
+    server: c9d93ec.qa.glados-config.net
+    port: 80
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: false
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"tw.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"tw.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    headers: {"Host":"tw.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    tls: false
+  - name: GLaDOS-F1-TW-02
+    type: vmess
+    servername: tw.moss.network
+    server: c9d93ec.qb.glados-config.net
+    port: 80
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: false
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"tw.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"tw.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    headers: {"Host":"tw.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    tls: false
+  - name: GLaDOS-F1-US-01
+    type: vmess
+    servername: intrepid.moss.network
+    server: c9d93ec.qa.glados-config.net
+    port: 80
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: false
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"intrepid.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"intrepid.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    headers: {"Host":"intrepid.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    tls: false
+  - name: GLaDOS-F1-US-02
+    type: vmess
+    servername: intrepid.moss.network
+    server: c9d93ec.qb.glados-config.net
+    port: 80
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: false
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"intrepid.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"intrepid.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    headers: {"Host":"intrepid.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    tls: false
+  - name: GLaDOS-F1-JP-01
+    type: vmess
+    servername: ntt.moss.network
+    server: c9d93ec.qd.glados-config.net
+    port: 80
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: false
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"ntt.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"ntt.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    headers: {"Host":"ntt.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    tls: false
+  - name: GLaDOS-F1-JP-02
+    type: vmess
+    servername: ntt.moss.network
+    server: c9d93ec.qe.glados-config.net
+    port: 80
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: false
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"ntt.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"ntt.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    headers: {"Host":"ntt.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    tls: false
+  - name: GLaDOS-F1-HK-01
+    type: vmess
+    servername: hk.moss.network
+    server: c9d93ec.qg.glados-config.net
+    port: 80
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: false
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"hk.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"hk.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    headers: {"Host":"hk.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    tls: false
+  - name: GLaDOS-F1-HK-02
+    type: vmess
+    servername: hk.moss.network
+    server: c9d93ec.qh.glados-config.net
+    port: 80
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: false
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"hk.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"hk.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    headers: {"Host":"hk.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    tls: false
+  - name: GLaDOS-F1-SG-01
+    type: vmess
+    servername: enterprise.moss.network
+    server: c9d93ec.qc.glados-config.net
+    port: 80
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: false
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"enterprise.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"enterprise.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    headers: {"Host":"enterprise.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    tls: false
+  - name: GLaDOS-F1-SG-02
+    type: vmess
+    servername: enterprise.moss.network
+    server: c9d93ec.qf.glados-config.net
+    port: 80
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: false
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"enterprise.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"enterprise.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    headers: {"Host":"enterprise.moss.network", "Edge": "c9d93ec.fm.huawei.com:145794" }
+    tls: false
+
+
+  - name: GLaDOS-G1-01
+    type: vmess
+    server: c9d93ec.f7.gladns.com
+    port: 3331
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: true
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
+    headers: {"Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
+    servername: n2.gladns.com
+    tls: true
+  - name: GLaDOS-G1-02
+    type: vmess
+    server: c9d93ec.f8.gladns.com
+    port: 3331
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: true
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
+    headers: {"Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
+    servername: n2.gladns.com
+    tls: true
+  - name: GLaDOS-G1-03
+    type: vmess
+    server: c9d93ec.f9.gladns.com
+    port: 3331
+    uuid: "57e0cb4d-eae5-48ec-8091-149dc2b309e0"
+    alterId: 0
+    cipher: chacha20-poly1305
+    udp: true
+    network: ws
+    ws-path: "/t"
+    ws-headers: { "Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
+    ws-opts:
+      path: "/t"
+      headers: { "Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
+    headers: {"Host":"tls.apple.com", "Edge": "c9d93ec.fm.apple.com:145794" }
+    servername: n2.gladns.com
+    tls: true
+  - name: GLaDOS-US-4-Netflix
+    type: ss
+    server: c9d93ec.d4.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-US-5-Netflix
+    type: ss
+    server: c9d93ec.d5.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - name: GLaDOS-US-6-Netflix
+    type: ss
+    server: c9d93ec.d6.gladns.com
+    port: 2377
+    cipher: chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: c9d93ec.dl.nintendo.net:145794
+  - {name: 🪜 GH🎯8080, type: http, server: 127.0.0.1, port: 8080}
+  - {name: 🇨🇳 💭 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: e09bd0f2-5f71-4021-b7a1-2c4b48c9900e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
+  - {name: 🇨🇳 💪 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: e09bd0f2-5f71-4021-b7a1-2c4b48c9900e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
+  - {name: 🇨🇳 🎦 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: ac4befec-ff79-4aa0-8f5a-16ca7f0cd201, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
+  - {name: 🇺🇸 🎦 x01, server: time.is, port: 443, type: vmess, uuid: 897a7f73-0dfc-47f1-846f-1dcd891ec1f9, alterId: 0, cipher: auto, tls: true, servername: cn.gpte.top, network: ws, ws-opts: {path: /2bbe73, headers: {Host: cn.gpte.top}}}
+  - {name: 🇺🇸 🎦 x02, server: time.is, port: 8080, type: vmess, uuid: 897a7f73-0dfc-47f1-846f-1dcd891ec1f9, alterId: 0, cipher: auto, tls: false, servername: tp.nty.tv189.com, network: ws, ws-opts: {path: /2bbe73, headers: {Host: cn.gpte.top}}}
+
+proxy-groups:
+  - name: 🐟🛑🛑
+    type: "select"
+    proxies:
+        - GLaDOS-G1-02
+        - GLaDOS-G1-01
+        - GLaDOS-G1-03
+        - GLaDOS-US-01
+        - GLaDOS-US-02
+        - GLaDOS-US-03
+        - GLaDOS-US-04
+        - GLaDOS-US-05
+        - GLaDOS-US-06
+        - GLaDOS-JP-01
+        - GLaDOS-JP-02
+        - GLaDOS-JP-03
+        - GLaDOS-TW-01
+        - GLaDOS-TW-02
+        - GLaDOS-TW-03
+        - GLaDOS-TW-04
+        - GLaDOS-TW-05
+        - GLaDOS-TW-06
+        - GLaDOS-HK-01
+        - GLaDOS-HK-02
+        - GLaDOS-HK-03
+        - GLaDOS-SG-01
+        - GLaDOS-SG-02
+        - GLaDOS-SG-03
+        - GLaDOS-UK-01
+        - GLaDOS-UK-02
+        - GLaDOS-UK-03
+        - GLaDOS-F1-TW-01
+        - GLaDOS-F1-TW-02
+        - GLaDOS-F1-US-01
+        - GLaDOS-F1-US-02
+        - GLaDOS-F1-JP-01
+        - GLaDOS-F1-JP-02
+        - GLaDOS-F1-HK-01
+        - GLaDOS-F1-HK-02
+        - GLaDOS-F1-SG-01
+        - GLaDOS-F1-SG-02
+  - name: D直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🇨🇳 💭 x1
+      - 🇨🇳 💪 x1
+      - 🇨🇳 🎦 x1
+      - 🇺🇸 🎦 x01
+      - 🇺🇸 🎦 x02
+      - 🪜 GH🎯8080
+
+
+rules:
+
+ - DOMAIN,raw.githubusercontent.com,🐟🛑🛑
+ - DOMAIN,update.glados-config.com,🐟🛑🛑
+ - IP-CIDR,136.22.64.0/24,D直连
+ - IP-CIDR,136.22.65.0/24,D直连
+ - IP-CIDR,136.22.67.0/24,D直连
+ - IP-CIDR,136.22.76.0/24,D直连
+ - IP-CIDR,136.22.83.0/24,D直连
+ - IP-CIDR,136.22.85.0/24,D直连
+ - IP-CIDR,136.22.86.0/24,D直连
+ - IP-CIDR,136.22.87.0/24,D直连
+ - IP-CIDR,136.22.92.0/24,D直连
+ - IP-CIDR,136.22.93.0/24,D直连
+ - IP-CIDR,136.22.94.0/24,D直连
+ - IP-CIDR,136.22.95.0/24,D直连
+ - IP-CIDR,136.22.96.0/24,D直连
+ - IP-CIDR,136.22.97.0/24,D直连
+ - IP-CIDR,136.22.98.0/24,D直连
+ - IP-CIDR,136.22.99.0/24,D直连
+ - IP-CIDR,136.22.100.0/24,D直连
+ - IP-CIDR,136.22.101.0/24,D直连
+ - IP-CIDR,136.22.102.0/24,D直连
+ - IP-CIDR,136.22.103.0/24,D直连
+ - IP-CIDR,136.22.104.0/24,D直连
+ - IP-CIDR,136.22.105.0/24,D直连
+ - IP-CIDR,136.22.106.0/24,D直连
+ - IP-CIDR,136.22.107.0/24,D直连
+ - IP-CIDR,136.22.108.0/24,D直连
+ - IP-CIDR,136.22.109.0/24,D直连
+ - IP-CIDR,136.22.110.0/24,D直连
+ - IP-CIDR,136.23.1.0/24,D直连
+ - IP-CIDR,136.23.2.0/24,D直连
+ - IP-CIDR,136.23.3.0/24,D直连
+ - IP-CIDR,136.23.4.0/24,D直连
+ - IP-CIDR,136.23.5.0/24,D直连
+ - IP-CIDR,136.23.6.0/24,D直连
+ - IP-CIDR,136.23.7.0/24,D直连
+ - IP-CIDR,136.23.8.0/24,D直连
+ - IP-CIDR,136.23.9.0/24,D直连
+ - IP-CIDR,136.23.10.0/24,D直连
+ - IP-CIDR,136.23.11.0/24,D直连
+ - IP-CIDR,136.23.12.0/24,D直连
+ - IP-CIDR,136.23.13.0/24,D直连
+ - IP-CIDR,136.23.14.0/24,D直连
+ - IP-CIDR,136.23.15.0/24,D直连
+ - IP-CIDR,136.23.16.0/24,D直连
+ - IP-CIDR,136.23.17.0/24,D直连
+ - IP-CIDR,136.23.18.0/24,D直连
+ - IP-CIDR,136.23.19.0/24,D直连
+ - IP-CIDR,136.23.20.0/24,D直连
+ - IP-CIDR,136.23.21.0/24,D直连
+ - IP-CIDR,136.23.22.0/24,D直连
+ - IP-CIDR,136.23.23.0/24,D直连
+ - IP-CIDR,136.23.24.0/24,D直连
+ - IP-CIDR,136.23.25.0/24,D直连
+ - IP-CIDR,136.23.26.0/24,D直连
+ - IP-CIDR,136.23.27.0/24,D直连
+ - IP-CIDR,136.23.28.0/24,D直连
+ - IP-CIDR,136.23.29.0/24,D直连
+ - IP-CIDR,136.23.30.0/24,D直连
+ - IP-CIDR,136.23.31.0/24,D直连
+ - IP-CIDR,136.23.32.0/24,D直连
+ - IP-CIDR,136.23.33.0/24,D直连
+ - IP-CIDR,136.23.34.0/24,D直连
+ - IP-CIDR,136.23.35.0/24,D直连
+ - IP-CIDR,209.107.176.0/24,D直连
+ - IP-CIDR,209.107.177.0/24,D直连
+ - IP-CIDR,209.107.178.0/24,D直连
+ - IP-CIDR,209.107.179.0/24,D直连
+ - IP-CIDR,209.107.180.0/24,D直连
+ - IP-CIDR,209.107.181.0/24,D直连
+ - IP-CIDR,209.107.182.0/24,D直连
+ - IP-CIDR,209.107.183.0/24,D直连
+ - IP-CIDR,209.107.184.0/24,D直连
+ - IP-CIDR,209.107.185.0/24,D直连
+ - IP-CIDR,209.107.186.0/24,D直连
+ - IP-CIDR,209.107.187.0/24,D直连
+ - IP-CIDR,209.107.188.0/24,D直连
+ - IP-CIDR,209.107.189.0/24,D直连
+ - IP-CIDR,209.107.190.0/24,D直连
+ - IP-CIDR,209.107.191.0/24,D直连
+
+
+#one.google.com
+ - IP-CIDR,209.107.188.0/24,D直连
+ - IP-CIDR,209.107.189.0/24,D直连
+ - IP-CIDR,209.107.190.0/24,D直连
+ - IP-CIDR,209.107.191.0/24,D直连
+ - IP-CIDR,209.107.188.0/24,D直连
+ - IP-CIDR,209.107.189.0/24,D直连
+ - IP-CIDR,209.107.190.0/24,D直连
+ - IP-CIDR,209.107.191.0/24,D直连
+
+
+#adguard
+ - IP-CIDR,37.120.210.198/32,🪜 GH🎯8080
+ - IP-CIDR,37.120.210.198/32,🪜 GH🎯8080
+ - IP-CIDR,37.120.210.198/32,🪜 GH🎯8080
+ - IP-CIDR,37.120.210.198/32,🪜 GH🎯8080
+ - IP-CIDR,37.120.210.198/32,🪜 GH🎯8080
+ - IP-CIDR,37.120.210.198/32,🪜 GH🎯8080
+ 
+
+ # dns.google/adguard-dns
+ - DOMAIN,d.adguard-dns.com,🐟🛑🛑
+ - DOMAIN,linkip.adguard-dns.com,D直连
+ - DOMAIN-SUFFIX,dns.google,🐟🛑🛑
+ - IP-CIDR,8.8.8.8/32,🐟🛑🛑
+ - IP-CIDR,8.8.4.4/32,🐟🛑🛑
+ - DOMAIN-SUFFIX,9f43c22f.d.adguard-dns.com,🐟🛑🛑
+ - IP-CIDR,94.140.14.59/32,🐟🛑🛑
+ - IP-CIDR,94.140.14.49/32,🐟🛑🛑
+
+
+
+
+
+ - DOMAIN-SUFFIX,m9009-us-lax-02-jqf6i8gd.mega-fine-obscurity.net,🪜 GH🎯8080
+
+
+ 
+ - DOMAIN-SUFFIX,connectivitycheck.gstatic.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,phosphor-pa.googleapis.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,prod.brass.cloud.cupronickel.goog,🐟🛑🛑
+ - DOMAIN-SUFFIX,scone-pa.googleapis.com,🐟🛑🛑
+ - DOMAIN,www.google.com,🐟🛑🛑
+ - DOMAIN,www.googleapis.com,🐟🛑🛑
+ - DOMAIN,edge.microsoft.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,subscriptionsmobile-pa.googleapis.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,play.googleapis.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,android.googleapis.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,subscriptionsmanagement-pa.googleapis.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,android.apis.google.com,🐟🛑🛑
+
+
+  # Google Keep 笔记服务
+ - DOMAIN-SUFFIX,keep.google.com,🛑🛑🐟
+
+  #  🐟🛑🛑服务
+ - DOMAIN-KEYWORD,openai,🐟🛑🛑
+ - DOMAIN-SUFFIX,ai.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,challenges.cloudflare.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,openai.com,🐟🛑🛑
+ - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🐟🛑🛑
+ - DOMAIN-SUFFIX,stripe.com,🐟🛑🛑
+
+
+# Reserved subnets
+ - IP-CIDR,0.0.0.0/8,D直连
+ - IP-CIDR,10.0.0.0/8,D直连
+ - IP-CIDR,100.64.0.0/10,D直连
+ - IP-CIDR,172.16.0.0/12,D直连
+ - IP-CIDR,192.0.0.0/24,D直连
+ - IP-CIDR,192.168.0.0/16,D直连
+ - IP-CIDR,224.0.0.0/4,D直连
+ - IP-CIDR,240.0.0.0/4,D直连
+ - IP-CIDR,255.255.255.255/32,D直连
+
+# T-Mobile wi-fi calling (#233)
+ - IP-CIDR,208.54.0.0/16,🐟🛑🛑
+
+# AT&T wi-fi calling
+ - IP-CIDR,129.192.166.0/24,🐟🛑🛑
+
+# UK EE wi-fi calling (#582)
+ - IP-CIDR,109.249.0.0/16,🐟🛑🛑
+
+# Sprint wi-fi calling (#939)
+ - IP-CIDR,68.31.26.0/24,🐟🛑🛑
+
+# Verizon wi-fi calling (#1321)
+ - IP-CIDR,141.207.0.0/16,🐟🛑🛑
+
+# Orange PL wi-fi calling (#1796)
+ - IP-CIDR,217.116.96.0/20,🐟🛑🛑
+
+# IranCell Wi-Fi calling
+ - IP-CIDR,92.42.49.0/24,🐟🛑🛑
+
+# Jio Wi-Fi calling
+ - IP-CIDR,49.44.59.0/24,🐟🛑🛑
+ - IP-CIDR,49.45.63.0/24,🐟🛑🛑
+
+# Mobile Communication Company of Iran Wi-Fi calling
+ - IP-CIDR,5.106.2.0/24,🐟🛑🛑
+
+# Aofei Data International Wi-Fi calling
+ - IP-CIDR,5.182.63.0/24,🐟🛑🛑
+ - IP-CIDR,185.232.56.0/24,🐟🛑🛑
+ - IP-CIDR,185.232.57.0/24,🐟🛑🛑
+
+# Bharti Airtel Limited Wi-Fi calling
+ - IP-CIDR,106.200.64.0/24,🐟🛑🛑
+ - IP-CIDR,106.200.65.0/24,🐟🛑🛑
+ - IP-CIDR,223.180.224.0/24,🐟🛑🛑
+ - IP-CIDR,117.96.89.0/24,🐟🛑🛑
+
+# Velcom Wi-Fi calling
+ - IP-CIDR,128.140.255.0/24,🐟🛑🛑
+
+# MTS Wi-Fi calling
+ - IP-CIDR,213.87.143.0/24,🐟🛑🛑
+
+# T-mobile Netherlands Wi-Fi calling
+ - IP-CIDR,84.241.238.0/24,🐟🛑🛑
+
+# MTC-KSA (Mobile Telecommunications Co Saudi Arabia) Wi-Fi calling
+ - IP-CIDR,79.170.52.0/24,🐟🛑🛑
+ - IP-CIDR,79.170.53.0/24,🐟🛑🛑
+ - IP-CIDR,185.5.152.0/24,🐟🛑🛑
+
+# China Mobile communications corporation Wi-Fi calling
+ - IP-CIDR,120.236.180.0/24,🐟🛑🛑
+ - IP-CIDR,183.236.59.0/24,🐟🛑🛑
+
+# DiGi Telecommunications Wi-Fi calling
+ - IP-CIDR,115.164.123.0/24,🐟🛑🛑
+ - IP-CIDR,115.164.251.0/24,🐟🛑🛑
+
+# Turkcell Wi-Fi calling
+ - IP-CIDR,188.59.223.0/24,🐟🛑🛑
+
+
+ - MATCH,D直连
