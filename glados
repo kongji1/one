@@ -1,30 +1,45 @@
-# Clash Config File for ClashforWindows/0.20.24-297228-11-352
-#port: 7890
-mixed-port: 7890
-#socks-port: 7891
-redir-port: 7892
-tproxy-port: 7893
-allow-lan: true
-mode: Rule
-log-level: debug
-external-controller: 127.0.0.1:9090
-ipv6: false
+# GLaDOS
+# GLobal Local and Destination Operating System
+# Clash Config File for Clash-297228-11-346
+# Generated at Thu Jun 08 2023 13:25:49 GMT+0000 (Coordinated Universal Time) by Aperture Science
+# ░██████╗░██╗░░░░░░█████╗░██████╗░░█████╗░░██████╗
+# ██╔════╝░██║░░░░░██╔══██╗██╔══██╗██╔══██╗██╔════╝
+# ██║░░██╗░██║░░░░░███████║██║░░██║██║░░██║╚█████╗░
+# ██║░░╚██╗██║░░░░░██╔══██║██║░░██║██║░░██║░╚═══██╗
+# ╚██████╔╝███████╗██║░░██║██████╔╝╚█████╔╝██████╔╝
+# ░╚═════╝░╚══════╝╚═╝░░╚═╝╚═════╝░░╚════╝░╚═════╝░
+# port of HTTP
+port: 7890
 
-#路由https://linkip.adguard-dns.com/linkip/9f43c22f/6vi3ymlMNQhpDrYW5CbaYccNf5aqqynpXnstbBVAgtz
-#red路由https://linkip.adguard-dns.com/linkip/3134b9a3/w5Ih04NaoRLWifXzlh7P6ONdybvpnLsSLWHCZFtoPM
-#mash路由https://linkip.adguard-dns.com/linkip/c514b774/x8dkn2wJ5Lnr7ix2JMNKsQhx9bi0TLT7WkRUojWH7Sy
-#one路由https://linkip.adguard-dns.com/linkip/c73df354/SzUEkDlhUhKA3IlauVdKwZxwNileL5415dnpZT4zvC7
+# port of SOCKS5
+socks-port: 7891
+
+allow-lan: false
+
+# Rule / Global/ DIRECT (default is Rule)
+mode: rule
+
+
+# set log level to stdout (default is info)
+# info / warning / error / debug
+log-level: info
+
+# A RESTful API for clash
+external-controller: 127.0.0.1:9090
+
+# Secret for RESTful API (Optional)
+secret: ""
 
 dns:
   enable: false # set true to enable dns (default is false)
   listen: 127.0.0.1:53
   nameserver:
-     - 94.140.14.49
-     - 94.140.14.59
+     - 119.29.29.29
+     - 114.114.114.114
   fallback: # concurrent request with nameserver, fallback used when GEOIP country isn't CN
-     - https://9f43c22f.d.adguard-dns.com/dns-query #9f43c22f@blue
-     - tls://9f43c22f.d.adguard-dns.com
-#     - quic://9f43c22f.d.adguard-dns.com
+     - https://1.1.1.1/dns-query
+     - tls://1.0.0.1:853
+     - tls://dns.google:853
 
 
 proxies:
@@ -707,6 +722,8 @@ proxies:
     plugin-opts:
       mode: tls
       host: c9d93ec.dl.nintendo.net:145794
+
+
   - {name: 🪜 GH🎯8080, type: http, server: 127.0.0.1, port: 8080}
   - {name: 🇨🇳 💭 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: e09bd0f2-5f71-4021-b7a1-2c4b48c9900e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
   - {name: 🇨🇳 💪 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: e09bd0f2-5f71-4021-b7a1-2c4b48c9900e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
