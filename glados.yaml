@@ -722,7 +722,7 @@ proxies:
   - {name: 🇨🇳 🎦 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: ac4befec-ff79-4aa0-8f5a-16ca7f0cd201, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
   - {name: 🇺🇸 🎦 x01, server: time.is, port: 443, type: vmess, uuid: 897a7f73-0dfc-47f1-846f-1dcd891ec1f9, alterId: 0, cipher: auto, tls: true, servername: cn.gpte.top, network: ws, ws-opts: {path: /2bbe73, headers: {Host: cn.gpte.top}}}
   - {name: 🇺🇸 🎦 x02, server: time.is, port: 8080, type: vmess, uuid: 897a7f73-0dfc-47f1-846f-1dcd891ec1f9, alterId: 0, cipher: auto, tls: false, servername: tp.nty.tv189.com, network: ws, ws-opts: {path: /2bbe73, headers: {Host: cn.gpte.top}}}
-  - {name: 🪜 GH, type: http, server: 127.0.0.1, port: 8080}
+  - {name: 🪜 GH13, type: http, server: 192.168.1.13, port: 8080}
   - {name: 🪜 GO, type: socks5, server: 127.0.0.1, port: 9090}
   - {name: 🪜 AV, type: http, server: 172.17.242.22, port: 8080}
   - {name: 🪜 AV🎯7890, type: http, server: 127.0.0.1, port: 7890}
@@ -740,7 +740,7 @@ proxy-groups:
       - 🇨🇳 💪 x1
       - 🇨🇳 🎦 x1
       - DIRECT
-      - 🪜 GH
+      - 🪜 GH13
       - 🪜 GO
       - 🪜 AV
       - 🪜 AV🎯9090
@@ -883,14 +883,14 @@ rules:
 
 
    #adguard
- - IP-CIDR,37.120.210.198/32,🪜 GH
- - IP-CIDR,37.120.210.198/32,🪜 GH
- - IP-CIDR,37.120.210.198/32,🪜 GH
- - IP-CIDR,37.120.210.198/32,🪜 GH
- - IP-CIDR,37.120.210.198/32,🪜 GH
- - IP-CIDR,37.120.210.198/32,🪜 GH
+ - IP-CIDR,37.120.210.198/32,🪜 GH13
+ - IP-CIDR,37.120.210.198/32,🪜 GH13
+ - IP-CIDR,37.120.210.198/32,🪜 GH13
+ - IP-CIDR,37.120.210.198/32,🪜 GH13
+ - IP-CIDR,37.120.210.198/32,🪜 GH13
+ - IP-CIDR,37.120.210.198/32,🪜 GH13
 
- - DOMAIN-SUFFIX,m9009-us-lax-02-jqf6i8gd.mega-fine-obscurity.net,🪜 GH
+ - DOMAIN-SUFFIX,m9009-us-lax-02-jqf6i8gd.mega-fine-obscurity.net,🪜 GH13
 
  - DOMAIN,raw.githubusercontent.com,🐟🐟🐟
  - DOMAIN,update.glados-config.com,🐟🐟🐟
