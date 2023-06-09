@@ -754,18 +754,18 @@ proxy-groups:
   - name: 🐟🐟🐟
     type: "select"
     proxies:
+        - GLaDOS-JP-01
+        - GLaDOS-JP-02
+        - GLaDOS-JP-03
+        - GLaDOS-G1-01
         - GLaDOS-G1-02
         - GLaDOS-G1-03
-        - GLaDOS-G1-01
         - GLaDOS-US-01
         - GLaDOS-US-02
         - GLaDOS-US-03
         - GLaDOS-US-04
         - GLaDOS-US-05
         - GLaDOS-US-06
-        - GLaDOS-JP-01
-        - GLaDOS-JP-02
-        - GLaDOS-JP-03
         - GLaDOS-TW-01
         - GLaDOS-TW-02
         - GLaDOS-TW-03
