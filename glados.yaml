@@ -17,13 +17,23 @@ ipv6: false
 
 dns:
   enable: true # set true to enable dns (default is false)
-  listen: 127.0.0.1:53
+  ipv6: false
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  default-nameserver:
+    - 114.114.114.114
+    - 223.5.5.5
+    - 208.67.222.222
+    - 8.8.8.8
+    - 8.8.4.4
   nameserver:
      - 94.140.14.49
      - 94.140.14.59
   fallback: # concurrent request with nameserver, fallback used when GEOIP country isn't CN
      - https://9f43c22f.d.adguard-dns.com/dns-query #9f43c22f@blue
      - tls://9f43c22f.d.adguard-dns.com
+     - 208.67.222.222
+  use-hosts: false   
 #     - quic://9f43c22f.d.adguard-dns.com
 
 
@@ -787,8 +797,105 @@ proxy-groups:
 
         
 rules:
+#user rules
+ #config IP
+ - IP-CIDR,222.211.75.189/32,🎯 直连
 
- # dns.google/adguard-dns
+ # G1 IP
+ - IP-CIDR,136.22.64.0/24,🎯 直连
+ - IP-CIDR,136.22.65.0/24,🎯 直连
+ - IP-CIDR,136.22.67.0/24,🎯 直连
+ - IP-CIDR,136.22.76.0/24,🎯 直连
+ - IP-CIDR,136.22.83.0/24,🎯 直连
+ - IP-CIDR,136.22.85.0/24,🎯 直连
+ - IP-CIDR,136.22.86.0/24,🎯 直连
+ - IP-CIDR,136.22.87.0/24,🎯 直连
+ - IP-CIDR,136.22.92.0/24,🎯 直连
+ - IP-CIDR,136.22.93.0/24,🎯 直连
+ - IP-CIDR,136.22.94.0/24,🎯 直连
+ - IP-CIDR,136.22.95.0/24,🎯 直连
+ - IP-CIDR,136.22.96.0/24,🎯 直连
+ - IP-CIDR,136.22.97.0/24,🎯 直连
+ - IP-CIDR,136.22.98.0/24,🎯 直连
+ - IP-CIDR,136.22.99.0/24,🎯 直连
+ - IP-CIDR,136.22.100.0/24,🎯 直连
+ - IP-CIDR,136.22.101.0/24,🎯 直连
+ - IP-CIDR,136.22.102.0/24,🎯 直连
+ - IP-CIDR,136.22.103.0/24,🎯 直连
+ - IP-CIDR,136.22.104.0/24,🎯 直连
+ - IP-CIDR,136.22.105.0/24,🎯 直连
+ - IP-CIDR,136.22.106.0/24,🎯 直连
+ - IP-CIDR,136.22.107.0/24,🎯 直连
+ - IP-CIDR,136.22.108.0/24,🎯 直连
+ - IP-CIDR,136.22.109.0/24,🎯 直连
+ - IP-CIDR,136.22.110.0/24,🎯 直连
+ - IP-CIDR,136.23.1.0/24,🎯 直连
+ - IP-CIDR,136.23.2.0/24,🎯 直连
+ - IP-CIDR,136.23.3.0/24,🎯 直连
+ - IP-CIDR,136.23.4.0/24,🎯 直连
+ - IP-CIDR,136.23.5.0/24,🎯 直连
+ - IP-CIDR,136.23.6.0/24,🎯 直连
+ - IP-CIDR,136.23.7.0/24,🎯 直连
+ - IP-CIDR,136.23.8.0/24,🎯 直连
+ - IP-CIDR,136.23.9.0/24,🎯 直连
+ - IP-CIDR,136.23.10.0/24,🎯 直连
+ - IP-CIDR,136.23.11.0/24,🎯 直连
+ - IP-CIDR,136.23.12.0/24,🎯 直连
+ - IP-CIDR,136.23.13.0/24,🎯 直连
+ - IP-CIDR,136.23.14.0/24,🎯 直连
+ - IP-CIDR,136.23.15.0/24,🎯 直连
+ - IP-CIDR,136.23.16.0/24,🎯 直连
+ - IP-CIDR,136.23.17.0/24,🎯 直连
+ - IP-CIDR,136.23.18.0/24,🎯 直连
+ - IP-CIDR,136.23.19.0/24,🎯 直连
+ - IP-CIDR,136.23.20.0/24,🎯 直连
+ - IP-CIDR,136.23.21.0/24,🎯 直连
+ - IP-CIDR,136.23.22.0/24,🎯 直连
+ - IP-CIDR,136.23.23.0/24,🎯 直连
+ - IP-CIDR,136.23.24.0/24,🎯 直连
+ - IP-CIDR,136.23.25.0/24,🎯 直连
+ - IP-CIDR,136.23.26.0/24,🎯 直连
+ - IP-CIDR,136.23.27.0/24,🎯 直连
+ - IP-CIDR,136.23.28.0/24,🎯 直连
+ - IP-CIDR,136.23.29.0/24,🎯 直连
+ - IP-CIDR,136.23.30.0/24,🎯 直连
+ - IP-CIDR,136.23.31.0/24,🎯 直连
+ - IP-CIDR,136.23.32.0/24,🎯 直连
+ - IP-CIDR,136.23.33.0/24,🎯 直连
+ - IP-CIDR,136.23.34.0/24,🎯 直连
+ - IP-CIDR,136.23.35.0/24,🎯 直连
+ - IP-CIDR,209.107.176.0/24,🎯 直连
+ - IP-CIDR,209.107.177.0/24,🎯 直连
+ - IP-CIDR,209.107.178.0/24,🎯 直连
+ - IP-CIDR,209.107.179.0/24,🎯 直连
+ - IP-CIDR,209.107.180.0/24,🎯 直连
+ - IP-CIDR,209.107.181.0/24,🎯 直连
+ - IP-CIDR,209.107.182.0/24,🎯 直连
+ - IP-CIDR,209.107.183.0/24,🎯 直连
+ - IP-CIDR,209.107.184.0/24,🎯 直连
+ - IP-CIDR,209.107.185.0/24,🎯 直连
+ - IP-CIDR,209.107.186.0/24,🎯 直连
+ - IP-CIDR,209.107.187.0/24,🎯 直连
+ - IP-CIDR,209.107.188.0/24,🎯 直连
+ - IP-CIDR,209.107.189.0/24,🎯 直连
+ - IP-CIDR,209.107.190.0/24,🎯 直连
+ - IP-CIDR,209.107.191.0/24,🎯 直连
+
+
+   #adguard
+ - IP-CIDR,37.120.210.198/32,🪜 GH
+ - IP-CIDR,37.120.210.198/32,🪜 GH
+ - IP-CIDR,37.120.210.198/32,🪜 GH
+ - IP-CIDR,37.120.210.198/32,🪜 GH
+ - IP-CIDR,37.120.210.198/32,🪜 GH
+ - IP-CIDR,37.120.210.198/32,🪜 GH
+
+ - DOMAIN-SUFFIX,m9009-us-lax-02-jqf6i8gd.mega-fine-obscurity.net,🪜 GH
+
+ - DOMAIN,raw.githubusercontent.com,🐟🐟🐟
+ - DOMAIN,update.glados-config.com,🐟🐟🐟
+
+   # dns.google/adguard-dns
  - DOMAIN,d.adguard-dns.com,🐟🐟🐟
  - DOMAIN-SUFFIX,dns.google,🐟🐟🐟
  - IP-CIDR,8.8.8.8/32,🐟🐟🐟
@@ -797,11 +904,6 @@ rules:
  - IP-CIDR,94.140.14.59/32,🐟🐟🐟
  - IP-CIDR,94.140.14.49/32,🐟🐟🐟
 
- - DOMAIN,raw.githubusercontent.com,🐟🐟🐟
- - DOMAIN,update.glados-config.com,🐟🐟🐟
-
-
-   # Google one服务
  - DOMAIN-SUFFIX,connectivitycheck.gstatic.com,🐟🐟🐟
  - DOMAIN-SUFFIX,phosphor-pa.googleapis.com,🐟🐟🐟
  - DOMAIN-SUFFIX,prod.brass.cloud.cupronickel.goog,🐟🐟🐟
@@ -815,7 +917,6 @@ rules:
  - DOMAIN-SUFFIX,subscriptionsmanagement-pa.googleapis.com,🐟🐟🐟
  - DOMAIN-SUFFIX,android.apis.google.com,🐟🐟🐟
 
-
   # Google Keep 笔记服务
  - DOMAIN-SUFFIX,keep.google.com,🐟🐟🐟
 
@@ -826,16 +927,6 @@ rules:
  - DOMAIN-SUFFIX,openai.com,🐟🐟🐟
  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🐟🐟🐟
  - DOMAIN-SUFFIX,stripe.com,🐟🐟🐟
-
-#adguard
- - IP-CIDR,37.120.210.198/32,🪜 GH
- - IP-CIDR,37.120.210.198/32,🪜 GH
- - IP-CIDR,37.120.210.198/32,🪜 GH
- - IP-CIDR,37.120.210.198/32,🪜 GH
- - IP-CIDR,37.120.210.198/32,🪜 GH
- - IP-CIDR,37.120.210.198/32,🪜 GH
- 
- - DOMAIN-SUFFIX,m9009-us-lax-02-jqf6i8gd.mega-fine-obscurity.net,🪜 GH
 
 # Final
  - MATCH,🎯 直连
