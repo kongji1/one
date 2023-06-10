@@ -43,73 +43,73 @@ proxies:
     server: c9d93ec.ha.gladns.com
     port: 3306
     sni: n2.gladns.com
-    password: "a50016fad77839e4"
+    password: "a50016fad78889e4"
     udp: true
     network: ws
     ws-opts:
       path: "/gateway/connect"
-      headers: { "Host":"a50016fad77839e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
+      headers: { "Host":"a50016fad78889e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
   - name: GLaDOS-H2-01
     type: trojan
     server: c9d93ec.hb.gladns.com
     port: 3306
     sni: n2.gladns.com
-    password: "a50016fad77839e4"
+    password: "a50016fad78889e4"
     udp: true
     network: ws
     ws-opts:
       path: "/gateway/connect"
-      headers: { "Host":"a50016fad77839e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
+      headers: { "Host":"a50016fad78889e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
   - name: GLaDOS-H2-02
     type: trojan
     server: c9d93ec.hc.gladns.com
     port: 3306
     sni: n2.gladns.com
-    password: "a50016fad77839e4"
+    password: "a50016fad78889e4"
     udp: true
     network: ws
     ws-opts:
       path: "/gateway/connect"
-      headers: { "Host":"a50016fad77839e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
+      headers: { "Host":"a50016fad78889e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
   - name: GLaDOS-H2-03
     type: trojan
     server: c9d93ec.hd.gladns.com
     port: 3306
     sni: n2.gladns.com
-    password: "a50016fad77839e4"
+    password: "a50016fad78889e4"
     udp: true
     network: ws
     ws-opts:
       path: "/gateway/connect"
-      headers: { "Host":"a50016fad77839e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
+      headers: { "Host":"a50016fad78889e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
   - name: GLaDOS-H2-04
     type: trojan
     server: c9d93ec.he.gladns.com
     port: 3306
     sni: n2.gladns.com
-    password: "a50016fad77839e4"
+    password: "a50016fad78889e4"
     udp: true
     network: ws
     ws-opts:
       path: "/gateway/connect"
-      headers: { "Host":"a50016fad77839e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
+      headers: { "Host":"a50016fad78889e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
   - name: GLaDOS-H2-05
     type: trojan
     server: c9d93ec.hf.gladns.com
     port: 3306
     sni: n2.gladns.com
-    password: "a50016fad77839e4"
+    password: "a50016fad78889e4"
     udp: true
     network: ws
     ws-opts:
       path: "/gateway/connect"
-      headers: { "Host":"a50016fad77839e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
+      headers: { "Host":"a50016fad78889e4.apple.com", "Edge": "c9d93ec.fm.huawei.com:145794" }
   - name: GLaDOS-US-01
     type: ss
     server: c9d93ec.u1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -119,7 +119,7 @@ proxies:
     server: c9d93ec.u2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -129,7 +129,7 @@ proxies:
     server: c9d93ec.u3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -139,7 +139,7 @@ proxies:
     server: c9d93ec.u7.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -149,7 +149,7 @@ proxies:
     server: c9d93ec.u8.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -159,7 +159,7 @@ proxies:
     server: c9d93ec.u9.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -169,7 +169,7 @@ proxies:
     server: c9d93ec.j1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -179,7 +179,7 @@ proxies:
     server: c9d93ec.j2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -189,7 +189,7 @@ proxies:
     server: c9d93ec.j3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -199,7 +199,7 @@ proxies:
     server: c9d93ec.t1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -209,7 +209,7 @@ proxies:
     server: c9d93ec.t2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -219,7 +219,7 @@ proxies:
     server: c9d93ec.t3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -229,7 +229,7 @@ proxies:
     server: c9d93ec.t7.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -239,7 +239,7 @@ proxies:
     server: c9d93ec.t8.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -249,7 +249,7 @@ proxies:
     server: c9d93ec.t9.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -259,7 +259,7 @@ proxies:
     server: c9d93ec.h1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -269,7 +269,7 @@ proxies:
     server: c9d93ec.h2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -279,7 +279,7 @@ proxies:
     server: c9d93ec.h3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -289,7 +289,7 @@ proxies:
     server: c9d93ec.s1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -299,7 +299,7 @@ proxies:
     server: c9d93ec.s2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -309,7 +309,7 @@ proxies:
     server: c9d93ec.s3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -319,7 +319,7 @@ proxies:
     server: c9d93ec.e1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -329,7 +329,7 @@ proxies:
     server: c9d93ec.e2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -339,7 +339,7 @@ proxies:
     server: c9d93ec.e3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -349,7 +349,7 @@ proxies:
     server: c9d93ec.b1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -359,7 +359,7 @@ proxies:
     server: c9d93ec.b2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -369,7 +369,7 @@ proxies:
     server: c9d93ec.b3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -379,7 +379,7 @@ proxies:
     server: c9d93ec.b4.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -389,7 +389,7 @@ proxies:
     server: c9d93ec.b5.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -399,7 +399,7 @@ proxies:
     server: c9d93ec.b6.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -409,7 +409,7 @@ proxies:
     server: c9d93ec.b7.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -419,7 +419,7 @@ proxies:
     server: c9d93ec.b8.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -429,7 +429,7 @@ proxies:
     server: c9d93ec.b9.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -439,7 +439,7 @@ proxies:
     server: c9d93ec.da.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -449,7 +449,7 @@ proxies:
     server: c9d93ec.db.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -459,7 +459,7 @@ proxies:
     server: c9d93ec.dc.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -692,7 +692,7 @@ proxies:
     server: c9d93ec.d4.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -702,7 +702,7 @@ proxies:
     server: c9d93ec.d5.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -712,7 +712,7 @@ proxies:
     server: c9d93ec.d6.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
