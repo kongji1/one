@@ -27,12 +27,12 @@ dns:
 #     - quic://9f43c22f.d.adguard-dns.com
 
 proxies:
-  - {name: 🇺🇸 C, server: c9d93ec.u1.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
-  - {name: 🇺🇸 B, server: c9d93ec.u2.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
-  - {name: 🇺🇸 A, server: c9d93ec.u3.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
-  - {name: 👹 A, server: c9d93ec.j1.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
-  - {name: 👹 B, server: c9d93ec.j2.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
-  - {name: 👹 C, server: c9d93ec.j3.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
+  - {name: 🇺🇸 C, server: c9d93ec.u1.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
+  - {name: 🇺🇸 B, server: c9d93ec.u2.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
+  - {name: 🇺🇸 A, server: c9d93ec.u3.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
+  - {name: 👹 A, server: c9d93ec.j1.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
+  - {name: 👹 B, server: c9d93ec.j2.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
+  - {name: 👹 C, server: c9d93ec.j3.glados-config.net, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: c9d93ec.dl.nintendo.net:145794}}
   - {name: 🇨🇳 💭 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: e09bd0f2-5f71-4021-b7a1-2c4b48c9900e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
   - {name: 🇨🇳 💪 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: e09bd0f2-5f71-4021-b7a1-2c4b48c9900e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
   - {name: 🇨🇳 🎦 x1, server: 222.211.75.189, port: 80, type: vmess, uuid: ac4befec-ff79-4aa0-8f5a-16ca7f0cd201, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: tp.nty.tv189.com }}}
@@ -52,7 +52,7 @@ proxies:
     server: c9d93ec.j1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
@@ -79,7 +79,7 @@ proxies:
     server: c9d93ec.j3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    password: "t0srmdxrm3xyjnvqz9ovlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
